@@ -1,3 +1,5 @@
+package Modals;
+import DataAccess.DtoModels.*;
 public class Maze extends Image {
 
 
@@ -13,6 +15,10 @@ public class Maze extends Image {
 
 
     public void Maze(){
+
+    }
+
+    public void Maze(MazeDto dto) {
 
     }
 
