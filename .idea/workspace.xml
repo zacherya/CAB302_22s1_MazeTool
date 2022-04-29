@@ -12,6 +12,8 @@
       <change afterPath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/DataAccess/Providers/IDataProvider.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mazeco-master.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
