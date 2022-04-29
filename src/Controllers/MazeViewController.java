@@ -1,13 +1,13 @@
 package Controllers;
 
-import Views.WelcomeView;
+import Views.MazeView;
 
-public class WelcomeViewController implements Runnable {
+public class MazeViewController implements Runnable {
 
-    private WelcomeView view;
+    private MazeView view;
 
-    public WelcomeViewController() {
-        view = new WelcomeView(this);
+    public MazeViewController() {
+        view = new MazeView(this);
     }
 
     public void updateView() {
