@@ -1,3 +1,5 @@
+import Modals.Maze;
+
 public class Editor {
 
 

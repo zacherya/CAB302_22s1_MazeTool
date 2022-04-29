@@ -1,3 +1,5 @@
+import Modals.Image;
+
 public class CustomMaze {
 
 
