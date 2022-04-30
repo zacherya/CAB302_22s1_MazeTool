@@ -5,7 +5,7 @@ import Modals.*;
 
 import java.awt.event.ActionListener;
 
-public abstract class DefaultController<M,V> implements IController{
+public abstract class DefaultController<M,V> implements IController, Runnable{
     protected V _view;
     protected M _modal;
     public DefaultController() {
@@ -17,5 +17,10 @@ public abstract class DefaultController<M,V> implements IController{
     }
     public V getView() {
         return _view;
+    }
+
+    @Override
+    public void run() {
+
     }
 }

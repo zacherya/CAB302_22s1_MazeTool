@@ -10,50 +10,47 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /** The WelcomeView Class*/
-public class WelcomeView extends JFrame implements Runnable  {
+public class WelcomeView extends DefaultView<WelcomeViewController>  {
 
     private WelcomeViewController controller;
-
-    private JButton newBtn;
-    private JButton randomBtn;
-    private JButton openBtn;
-
-    private static final int WIDTH = 400;
-    private static final int HEIGHT = 200;
-    private static final int ROWS = 3;
-    private static final int COLS = 2;
 
     /** Displays the Welcome View
      * @param controller A WelcomeViewController*/
     public WelcomeView(WelcomeViewController controller) {
+        super("Create-a-Maze!",400,200);
         this.controller = controller;
 
-        // JFrame setup
-        setMinimumSize(new Dimension(WIDTH, HEIGHT));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(ROWS, COLS));
-        setResizable(false);
-        setTitle("Create-a-Maze!");
-
-        // Create buttons
-        newBtn = createButton("New", this::newBtnAction);
-        randomBtn = createButton("Random", this::randomBtnAction);
-        openBtn = createButton("Open", this::openBtnAction);
-
-        // Add buttons to the JFrame
-        add(newBtn);
-        add(randomBtn);
-        add(openBtn);
-
-        // Resize the main frame to fit its components
-        pack();
-
-        // Center on screen
-        setLocationRelativeTo(null);
-
-        // Make the window visible
-        setVisible(true);
+        readyFrame(this::addElements);
     }
+    
+    private void addElements() {
+        //create main panel
+        panels.put("primary", new JPanel());
+        panels.put("buttons", new JPanel());
+        panels.put("newAndOpen", new JPanel());
+        panels.put("randomMaze", new JPanel());
+        
+        // Create buttons
+        buttons.put("newBtn", createButton("Create new maze", this::newBtnAction));
+        buttons.put("randomBtn", createButton("Generate random maze", this::randomBtnAction));
+        buttons.put("openBtn", createButton("Open existing maze", this::openBtnAction));
+
+        // Define grids
+        definePanelGrid("primary",1,1,0,0);
+        definePanelGrid("buttons",2,1,0,10);
+        definePanelGrid("newAndOpen",1,2,10,0);
+        definePanelGrid("randomMaze",1,1,0,0);
+
+        addPanelsToPanel(panels.get("primary"),"buttons");
+        addPanelsToPanel(panels.get("buttons"),"newAndOpen");
+        addPanelsToPanel(panels.get("buttons"),"randomMaze");
+
+        addButtonsToPanel(panels.get("newAndOpen"),"newBtn","openBtn");
+        addButtonsToPanel(panels.get("randomMaze"),"randomBtn");
+
+        getContentPane().add(panels.get("primary"));
+    }
+    
     /** Creates a button
      * @param withText A String of text for the button
      * @param actionListener An actionListener*/

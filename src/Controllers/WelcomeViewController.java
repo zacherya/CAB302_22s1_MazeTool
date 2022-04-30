@@ -4,12 +4,10 @@ import Views.WelcomeView;
 
 import javax.swing.*;
 
-public class WelcomeViewController implements IController, Runnable {
-
-    private WelcomeView view;
+public class WelcomeViewController extends DefaultController<Object, WelcomeView> {
 
     public WelcomeViewController() {
-        view = new WelcomeView(this);
+        _view = new WelcomeView(this);
     }
 
     public void updateView() {
@@ -17,11 +15,7 @@ public class WelcomeViewController implements IController, Runnable {
     }
 
     public void disposeView() {
-        view.dispose();
+        _view.dispose();
     }
 
-    @Override
-    public void run() {
-
-    }
 }

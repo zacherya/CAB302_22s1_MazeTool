@@ -1,12 +1,13 @@
 package Views;
 import javax.swing.*;
+import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
-public abstract class DefaultView<T> extends JFrame implements IView, Runnable, ActionListener {
-    protected T _controller;
+public abstract class DefaultView<C> extends JFrame implements IView, Runnable, ActionListener {
+    protected C _controller;
     private static int viewWidth;
     private static int viewHeight;
 
@@ -31,8 +32,23 @@ public abstract class DefaultView<T> extends JFrame implements IView, Runnable, 
 
         configureFrame();
     }
-    public void definePanelGrid(String panelId, int rows, int cols) {
+
+    /**
+     * Get an exisiting panel and define a grid layout for it with rows and cols. Gap between
+     * elements for x and y can be specified else set to 0.
+     *
+     * @param panelId
+     * @param rows
+     * @param cols
+     * @param hGap
+     * @param vGap
+     */
+    public void definePanelGrid(String panelId, int rows, int cols, int hGap, int vGap) {
         GridLayout layout = new GridLayout(rows,cols);
+        layout.setVgap(vGap);
+        layout.setVgap(vGap);
+        layout.setHgap(hGap);
+        panels.get(panelId).setBorder(new EmptyBorder(5, 5, 5, 5));
         panels.get(panelId).setLayout(layout);
     }
     public void addPanelsToPanel(JPanel panel, String... objectIds) {
@@ -81,6 +97,7 @@ public abstract class DefaultView<T> extends JFrame implements IView, Runnable, 
      */
     @Override
     public void configureFrame() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(viewWidth, viewHeight));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

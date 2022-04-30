@@ -27,7 +27,7 @@ public class OpenView extends DefaultView<OpenViewController> {
         buttons.put("button2",createButton("hello", 55, 30, null));
         buttons.put("button3",createButton("asd", 55, 30, null));
 
-        definePanelGrid("topPanel", 3,1);
+        definePanelGrid("topPanel", 3,1,0,0);
         addButtonsToPanel(panels.get("topPanel"), "button1", "button3", "button2");
 
         getContentPane().add(panels.get("topPanel"), BorderLayout.PAGE_START);

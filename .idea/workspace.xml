@@ -5,36 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/IController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modals/Open.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/DefaultView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/IView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/MazeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/MazeViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/WelcomeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/WelcomeViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/CustomMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/CustomMaze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/DbConnectionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/DbConnectionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/DtoModels/MazeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/DtoModels/MazeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Providers/BaseDataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Providers/BaseDataProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Providers/IDataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Providers/IDataProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Providers/MazeDataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Providers/MazeDataProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Difficulty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Difficulty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Editor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Editor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Modals/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Modals/Image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Modals/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Modals/Maze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/RandomMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/RandomMaze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/DefaultView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/DefaultView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/MazeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/MazeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/OpenView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/OpenView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/WelcomeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/WelcomeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/DefaultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DefaultView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/OpenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
