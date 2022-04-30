@@ -2,7 +2,9 @@ package Controllers;
 
 import Views.WelcomeView;
 
-public class WelcomeViewController implements Runnable {
+import javax.swing.*;
+
+public class WelcomeViewController implements IController, Runnable {
 
     private WelcomeView view;
 

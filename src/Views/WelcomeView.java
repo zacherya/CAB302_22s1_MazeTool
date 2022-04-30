@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.MazeViewController;
+import Controllers.OpenViewController;
 import Controllers.WelcomeViewController;
 
 import javax.swing.*;
@@ -70,17 +71,23 @@ public class WelcomeView extends JFrame implements Runnable  {
     private void newBtnAction(ActionEvent actionEvent) {
         System.out.println("New button clicked");
         controller.disposeView();
-        MazeViewController newView = new MazeViewController();
+        MazeViewController newView = new MazeViewController(false);
     }
 
     /** Event for a random button
      * @param actionEvent - An ActionEvent*/
-    private void randomBtnAction(ActionEvent actionEvent) { System.out.println("Random button clicked"); }
+    private void randomBtnAction(ActionEvent actionEvent) {
+        System.out.println("Random button clicked");
+        controller.disposeView();
+        MazeViewController newView = new MazeViewController(true);
+    }
 
     /** Event for an open button
      * @param actionEvent - An ActionEvent*/
     private void openBtnAction(ActionEvent actionEvent) {
         System.out.println("Open button clicked");
+        controller.disposeView();
+        OpenViewController newView = new OpenViewController();
     }
 
     @Override

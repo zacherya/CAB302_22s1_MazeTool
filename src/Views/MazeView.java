@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /** The MazeView Class */
-public class MazeView extends JFrame implements Runnable {
+public class MazeView extends DefaultView {
 
     private MazeViewController controller;
 
@@ -45,14 +45,13 @@ public class MazeView extends JFrame implements Runnable {
     /** Generates the view of a Maze
      * @param controller A MazeViewController */
     public MazeView(MazeViewController controller) {
+        // JFrame setup
+        super("New Maze", 750,450);
+        configureFrame();
+
+        //Set Controller
         this.controller = controller;
 
-        // JFrame setup
-        setMinimumSize(new Dimension(WIDTH, HEIGHT));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
-        setResizable(false);
-        setTitle("New Maze");
 
         // Create panels
         topPanel = new JPanel();
@@ -119,22 +118,6 @@ public class MazeView extends JFrame implements Runnable {
         rightPanel.add(logoImageBtn);
         rightPanel.add(entryImageBtn);
         rightPanel.add(exitImageBtn);
-    }
-
-    /** Creates buttons
-     * @param withText String of text for the button
-     * @param actionListener An ActionListener
-     * @param width Preferred width of the button
-     * @param height Preferred height of the button
-     * @return A new button */
-    private JButton createButton(String withText, int width, int height, ActionListener actionListener) {
-
-        JButton button = new JButton();
-        button.setText(withText);
-        button.setPreferredSize(new Dimension(width, height));
-        button.addActionListener(actionListener);
-
-        return button;
     }
 
     /** Event for a back button

@@ -1,6 +1,6 @@
 package DataAccess.Providers;
 
-public class BaseDataProvider<T> implements IDataProvider {
+public abstract class BaseDataProvider<T> implements IDataProvider {
 
     public Iterable<T> GetEntities() {
         return null;
