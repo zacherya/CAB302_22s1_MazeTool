@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/** The WelcomeView Class*/
 public class WelcomeView extends JFrame implements Runnable  {
 
     private WelcomeViewController controller;
@@ -21,6 +22,8 @@ public class WelcomeView extends JFrame implements Runnable  {
     private static final int ROWS = 3;
     private static final int COLS = 2;
 
+    /** Displays the Welcome View
+     * @param controller A WelcomeViewController*/
     public WelcomeView(WelcomeViewController controller) {
         this.controller = controller;
 
@@ -50,7 +53,9 @@ public class WelcomeView extends JFrame implements Runnable  {
         // Make the window visible
         setVisible(true);
     }
-
+    /** Creates a button
+     * @param withText A String of text for the button
+     * @param actionListener An actionListener*/
     private JButton createButton(String withText, ActionListener actionListener) {
 
         JButton button = new JButton();
@@ -60,14 +65,20 @@ public class WelcomeView extends JFrame implements Runnable  {
         return button;
     }
 
+    /** Event for an action button
+     * @param actionEvent - An ActionEvent*/
     private void newBtnAction(ActionEvent actionEvent) {
         System.out.println("New button clicked");
         controller.disposeView();
         MazeViewController newView = new MazeViewController();
     }
 
+    /** Event for a random button
+     * @param actionEvent - An ActionEvent*/
     private void randomBtnAction(ActionEvent actionEvent) { System.out.println("Random button clicked"); }
 
+    /** Event for an open button
+     * @param actionEvent - An ActionEvent*/
     private void openBtnAction(ActionEvent actionEvent) {
         System.out.println("Open button clicked");
     }

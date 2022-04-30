@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/** The MazeView Class*/
 public class MazeView extends JFrame implements Runnable {
 
     private MazeViewController controller;
@@ -23,6 +24,8 @@ public class MazeView extends JFrame implements Runnable {
     private JButton saveBtn;
     private JButton exportBtn;
 
+    /** Generates the view of a Maze
+     * @param controller A MazeViewController*/
     public MazeView(MazeViewController controller) {
         this.controller = controller;
 
@@ -66,7 +69,7 @@ public class MazeView extends JFrame implements Runnable {
         // Make the window visible
         setVisible(true);
     }
-
+    /** Buttons for the GUI*/
     private void layoutButtonPanel() {
 
         buttonPanel.setLayout(new GridLayout(ROWS, COLS));
@@ -77,6 +80,10 @@ public class MazeView extends JFrame implements Runnable {
 
     }
 
+    /** Creates buttons
+     * @param withText String of text for the button
+     * @param actionListener An ActionListener
+     * @return A new button*/
     private JButton createButton(String withText, ActionListener actionListener) {
 
         JButton button = new JButton();
@@ -86,16 +93,24 @@ public class MazeView extends JFrame implements Runnable {
         return button;
     }
 
+    /** Event for a home button
+     * @param actionEvent An ActionEvent*/
     private void homeBtnAction(ActionEvent actionEvent) {
         System.out.println("Home button clicked");
         controller.disposeView();
         WelcomeViewController newView = new WelcomeViewController();
     }
 
+    /** Event for a solution button
+     * @param actionEvent An ActionEvent*/
     private void solutionBtnAction(ActionEvent actionEvent) { System.out.println("Show solution button clicked"); }
 
+    /** Event for a save button
+     * @param actionEvent An ActionEvent*/
     private void saveBtnAction(ActionEvent actionEvent) { System.out.println("Save button clicked"); }
 
+    /** Event for a export button
+     * @param actionEvent An ActionEvent*/
     private void exportBtnAction(ActionEvent actionEvent) { System.out.println("Export button clicked"); }
 
     @Override
