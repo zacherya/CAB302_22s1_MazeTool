@@ -32,7 +32,7 @@ public class WelcomeView extends JFrame implements Runnable  {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(ROWS, COLS));
         setResizable(false);
-        setTitle("Create-A-Maze!");
+        setTitle("Create-a-Maze!");
 
         // Create buttons
         newBtn = createButton("New", this::newBtnAction);
