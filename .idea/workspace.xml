@@ -17,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/DefaultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DefaultView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/OpenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WelcomeView.java" afterDir="false" />
     </list>
