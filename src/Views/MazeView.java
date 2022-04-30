@@ -13,8 +13,6 @@ public class MazeView extends DefaultView {
 
     private MazeViewController controller;
 
-    private static final int WIDTH = 750;
-    private static final int HEIGHT = 450;
     private static final int BOTTOM_BTN_WIDTH = 0;
     private static final int BOTTOM_BTN_HEIGHT = 40;
     private static final int RIGHT_BTN_WIDTH = 175;
@@ -52,7 +50,11 @@ public class MazeView extends DefaultView {
         //Set Controller
         this.controller = controller;
 
+        readyFrame(this::addElements);
 
+    }
+
+    private void addElements() {
         // Create panels
         topPanel = new JPanel();
         bottomPanel = new JPanel();
@@ -82,20 +84,6 @@ public class MazeView extends DefaultView {
         getContentPane().add(rightPanel, BorderLayout.LINE_END);
         getContentPane().add(leftPanel, BorderLayout.LINE_START);
         getContentPane().add(centrePanel, BorderLayout.CENTER);
-
-        // Resize the main frame to fit its components
-        pack();
-
-        // Center on screen
-        setLocationRelativeTo(null);
-
-        // Configure the custom panels
-        layoutTopPanel();
-        layoutBottomPanel();
-        layoutRightPanel();
-
-        // Make the window visible
-        setVisible(true);
     }
 
     /** Components for the top panel */
