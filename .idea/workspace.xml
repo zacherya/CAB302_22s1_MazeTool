@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/MazeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/MazeViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/WelcomeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/WelcomeViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/DbConnectionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/DataAccess/DbConnectionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/DefaultView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/DefaultView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/MazeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/MazeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/IController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/DbConnectionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/DbConnectionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/IDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/IDataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CustomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomMaze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/ConnectionInfoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exceptions/ConnectionInfoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/DefaultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DefaultView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Open.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RandomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/OpenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,14 +48,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Amazon Corretto/jdk17.0.3_6" />

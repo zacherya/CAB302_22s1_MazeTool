@@ -9,7 +9,8 @@ public class CustomMaze {
     boolean incLogo;
     Image image;
 
-    /** Constructor*/
+    /** Constructor
+     * @authors Alex Hannah */
     public void CustomMaze(){
 
     }
@@ -18,7 +19,8 @@ public class CustomMaze {
      * @param mazeWidth Integer with the dimensions for the width of the Maze
      * @param mazeHeight Integer with the dimensions for the height of the Maze
      * @param incLogo A boolean that tells if the maze has an included logo or not
-     * @param image The image used when a logo is included*/
+     * @param image The image used when a logo is included
+     * @authors Alex Hannah */
 
     public CustomMaze(int mazeWidth, int mazeHeight, boolean incLogo, Image image){
         this.mazeWidth = mazeWidth;
@@ -27,7 +29,8 @@ public class CustomMaze {
         this.image = image;
     }
 
-    /** Generates A maze with the custom options*/
+    /** Generates A maze with the custom options
+     * @authors Alex Hannah */
     public void generateMaze(){
 
     }

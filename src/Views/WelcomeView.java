@@ -15,14 +15,20 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     private WelcomeViewController controller;
 
     /** Displays the Welcome View
-     * @param controller A WelcomeViewController*/
+     * @param controller A WelcomeViewController
+     * @authors Aaron Nolan, Zac Adams
+     * */
     public WelcomeView(WelcomeViewController controller) {
         super("Create-a-Maze!",400,200);
         this.controller = controller;
 
         readyFrame(this::addElements);
     }
-    
+
+    /**
+     * Adds and creates the elements for the view's frame
+     * @authors Aaron Nolan, Zac Adams
+     */
     private void addElements() {
         //create main panel
         panels.put("primary", new JPanel());
@@ -53,7 +59,8 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     
     /** Creates a button
      * @param withText A String of text for the button
-     * @param actionListener An actionListener*/
+     * @param actionListener An actionListener
+     * @authors Aaron Nolan */
     private JButton createButton(String withText, ActionListener actionListener) {
 
         JButton button = new JButton();
@@ -64,7 +71,8 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     }
 
     /** Event for an action button
-     * @param actionEvent - An ActionEvent*/
+     * @param actionEvent - An ActionEvent
+     * @authors Aaron Nolan */
     private void newBtnAction(ActionEvent actionEvent) {
         System.out.println("New button clicked");
         controller.disposeView();
@@ -72,7 +80,8 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     }
 
     /** Event for a random button
-     * @param actionEvent - An ActionEvent*/
+     * @param actionEvent - An ActionEvent
+     * @authors Aaron Nolan */
     private void randomBtnAction(ActionEvent actionEvent) {
         System.out.println("Random button clicked");
         controller.disposeView();
@@ -80,7 +89,8 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     }
 
     /** Event for an open button
-     * @param actionEvent - An ActionEvent*/
+     * @param actionEvent - An ActionEvent
+     * @authors Aaron Nolan */
     private void openBtnAction(ActionEvent actionEvent) {
         System.out.println("Open button clicked");
         controller.disposeView();

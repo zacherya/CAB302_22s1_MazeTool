@@ -21,8 +21,10 @@ public class MazeView extends DefaultView<MazeViewController> {
     private JFileChooser entryImageSelector = new JFileChooser();
     private JFileChooser exitImageSelector = new JFileChooser();
 
-    /** Generates the view of a Maze
-     * @param controller A MazeViewController */
+    /** Constructs and configures the view for Maze
+     * @param controller The views controller access parameter
+     * @authors Aaron Nolan, Zac Adams
+     */
     public MazeView(MazeViewController controller) {
         // JFrame setup
         super("New Maze", 750,450);
@@ -35,6 +37,10 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     }
 
+    /**
+     * Creates and adds the elements to the view's frame
+     * @authors Aaron Nolan, Zac Adams
+     */
     private void addElements() {
         // Create panels
         panels.put("primary", new JPanel());
@@ -87,7 +93,9 @@ public class MazeView extends DefaultView<MazeViewController> {
     }
 
     /** Event for a back button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan
+     */
     private void backBtnAction(ActionEvent actionEvent) {
         System.out.println("Back button clicked");
         _controller.disposeView();
@@ -95,33 +103,39 @@ public class MazeView extends DefaultView<MazeViewController> {
     }
 
     /** Event for a solution button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan */
     private void solutionBtnAction(ActionEvent actionEvent) { System.out.println("Show solution button clicked"); }
 
     /** Event for a save button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan */
     private void saveBtnAction(ActionEvent actionEvent) { System.out.println("Save button clicked"); }
 
     /** Event for an export button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan */
     private void exportBtnAction(ActionEvent actionEvent) { System.out.println("Export button clicked"); }
 
     /** Event for a logo image button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan*/
     private void logoImageBtnAction(ActionEvent actionEvent) {
         System.out.println("Select logo image button clicked");
         logoImageSelector.showOpenDialog(this);
     }
 
     /** Event for an entry image button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan */
     private void entryImageBtnAction(ActionEvent actionEvent) {
         System.out.println("Select entry image button clicked");
         entryImageSelector.showOpenDialog(this);
     }
 
     /** Event for an exit image button
-     * @param actionEvent An ActionEvent */
+     * @param actionEvent An ActionEvent
+     * @authors Aaron Nolan */
     private void exitImageBtnAction(ActionEvent actionEvent) {
         System.out.println("Select exit image button clicked");
         exitImageSelector.showOpenDialog(this);

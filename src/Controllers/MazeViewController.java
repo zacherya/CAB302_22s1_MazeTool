@@ -1,11 +1,13 @@
 package Controllers;
 
+import DataAccess.Providers.MazeDataProvider;
 import Modals.Open;
 import Views.MazeView;
 import Modals.Maze;
 import Views.OpenView;
 
 public class MazeViewController extends DefaultController<Maze, MazeView>  {
+    private MazeDataProvider _provider;
 
     /**
      * Initalise a new MazeViewController to initiate a new View and modal
@@ -14,6 +16,7 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
      * @authors Aaron Nolan, Zac Adams
      */
     public MazeViewController(boolean generateRandom) {
+        _provider = new MazeDataProvider();
         _view = new MazeView(this);
         if(generateRandom) {
             // Configure maze to be random here

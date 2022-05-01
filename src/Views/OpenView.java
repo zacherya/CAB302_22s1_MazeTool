@@ -11,6 +11,11 @@ import java.util.List;
 
 public class OpenView extends DefaultView<OpenViewController> {
 
+    /**
+     * Initalises the configuration and objects for the Open View frame
+     * @param controller
+     * @authors Zac Adams
+     */
     public OpenView(OpenViewController controller) {
         super("Open Maze", 750, 450);
 
@@ -19,6 +24,11 @@ public class OpenView extends DefaultView<OpenViewController> {
         readyFrame(this::addFrameElements);
     }
 
+    /**
+     * Adds and configures the elements for the view's frame
+     * @authors Zac Adams
+     * @// TODO: 1/05/2022 Refactor and implement this method properly (Make gui relevant). 
+     */
     private void addFrameElements() {
         // Create panels
         panels.put("topPanel", new JPanel());
