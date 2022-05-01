@@ -1,3 +1,5 @@
+package Helpers;
+
 import Modals.Image;
 
 /** The Custom Maze Class*/

@@ -1,6 +1,8 @@
+package Helpers;
+
 import Modals.Maze;
 
-/** The Editor Class*/
+/** The Helpers.Editor Class*/
 public class Editor {
 
 

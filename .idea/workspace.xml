@@ -9,15 +9,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CustomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/CustomMaze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Difficulty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Editor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Image.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Open.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RandomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/RandomMaze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/OpenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WelcomeView.java" afterDir="false" />
