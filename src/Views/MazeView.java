@@ -11,14 +11,10 @@ import java.awt.event.ActionListener;
 /** The MazeView Class */
 public class MazeView extends DefaultView<MazeViewController> {
 
-    private MazeViewController _controller;
-
     private static final int BOTTOM_BTN_WIDTH = 0;
     private static final int BOTTOM_BTN_HEIGHT = 40;
     private static final int RIGHT_BTN_WIDTH = 175;
     private static final int RIGHT_BTN_HEIGHT = 30;
-
-
 
     // File selectors
     private JFileChooser logoImageSelector = new JFileChooser();

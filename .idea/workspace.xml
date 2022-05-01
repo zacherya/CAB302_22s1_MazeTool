@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/ConnectionInfoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/MazeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/MazeViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/WelcomeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/WelcomeViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/DefaultView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/DefaultView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/MazeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/MazeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/OpenView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/OpenView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/WelcomeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Views/WelcomeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/DefaultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DefaultView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataAccess/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataAccess/DbConnectionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/DbConnectionInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/OpenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +48,7 @@
 }</component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Microsoft/jdk-11.0.12.7-hotspot" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Amazon Corretto/jdk17.0.3_6" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Program" />
       <module name="CAB302_22s1_MazeTool_Project" />
