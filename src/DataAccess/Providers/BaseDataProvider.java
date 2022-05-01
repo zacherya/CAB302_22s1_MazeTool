@@ -1,24 +1,24 @@
 package DataAccess.Providers;
 
-public abstract class BaseDataProvider<T> implements IDataProvider {
+public abstract class BaseDataProvider<T> implements IDataProvider<T> {
 
     public Iterable<T> GetEntities() {
         return null;
     }
 
-    public boolean SetEntities() {
-        return false;
+    public T GetEntity(String key) {
+        return null;
     }
     
-    public boolean AddEntity() {
+    public boolean AddEntity(T object) {
         return false;
     }
 
-    public boolean RemoveEntity() {
+    public boolean RemoveEntity(T object) {
         return false;
     }
 
-    public boolean EnsureEntity() {
+    public boolean EnsureEntity(T object) {
         return false;
     }
 }

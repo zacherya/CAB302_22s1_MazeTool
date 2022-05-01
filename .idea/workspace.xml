@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302_22s1_MazeTool_Project/Controllers/DefaultController.class" afterDir="false" />
@@ -19,6 +20,9 @@
       <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/WelcomeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataAccess/DbConnectionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/DbConnectionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/BaseDataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/IDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/IDataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exceptions/ConnectionInfoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exceptions/ConnectionInfoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/DefaultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DefaultView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/IView.java" afterDir="false" />
