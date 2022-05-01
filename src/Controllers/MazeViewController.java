@@ -1,10 +1,8 @@
 package Controllers;
 
 import DataAccess.Providers.MazeDataProvider;
-import Modals.Open;
 import Views.MazeView;
 import Modals.Maze;
-import Views.OpenView;
 
 public class MazeViewController extends DefaultController<Maze, MazeView>  {
     private MazeDataProvider _provider;
