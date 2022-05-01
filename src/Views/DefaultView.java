@@ -21,9 +21,10 @@ public abstract class DefaultView<C> extends JFrame implements IView, Runnable, 
 
     /**
      * Initalise the default view with a title and size
-     * @param frameTitle
-     * @param width
-     * @param height
+     * @param frameTitle The view's title that appears in the OS's frame, taskbar and task manager
+     * @param width The view's default starting width
+     * @param height The view's default starting height
+     * @authors Zac Adams
      */
     public DefaultView(String frameTitle, int width, int height) {
         super(frameTitle);
@@ -37,11 +38,12 @@ public abstract class DefaultView<C> extends JFrame implements IView, Runnable, 
      * Get an exisiting panel and define a grid layout for it with rows and cols. Gap between
      * elements for x and y can be specified else set to 0.
      *
-     * @param panelId
-     * @param rows
-     * @param cols
-     * @param hGap
-     * @param vGap
+     * @param panelId The panel key string defined in the views 'panels' lookup object
+     * @param rows The amount of rows the grid should render available
+     * @param cols The amount of columns the grid should render available
+     * @param hGap The gap on the x-axis between columns
+     * @param vGap The gap on the y-axis between rows
+     * @authors Zac Adams
      */
     public void definePanelGrid(String panelId, int rows, int cols, int hGap, int vGap) {
         GridLayout layout = new GridLayout(rows,cols);
@@ -51,11 +53,26 @@ public abstract class DefaultView<C> extends JFrame implements IView, Runnable, 
         panels.get(panelId).setBorder(new EmptyBorder(5, 5, 5, 5));
         panels.get(panelId).setLayout(layout);
     }
+
+    /**
+     * Method to add a single or multiple panels to a particular panel
+     * @param panel The panel the objects to should be rendered in
+     * @param objectIds The corresponding object key defined in the panels lookup variable
+     * @// TODO: 1/05/2022 Add complimenting method to accept panelId
+     * @authors Zac Adams
+     */
     public void addPanelsToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(panels.get(objectId));
         }
     }
+    /**
+     * Method to add a single or multiple buttons to a particular panel
+     * @param panel The panel the objects to should be rendered in
+     * @param objectIds The corresponding object key defined in the buttons lookup variable.
+     * @// TODO: 1/05/2022 Add complimenting method to accept panelId
+     * @authors Zac Adams
+     */
     public void addButtonsToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(buttons.get(objectId));
@@ -65,39 +82,71 @@ public abstract class DefaultView<C> extends JFrame implements IView, Runnable, 
 //            panel.add(btn);
 //        }
     }
+    /**
+     * Method to add a single or multiple textAreas to a particular panel
+     * @param panel The panel the objects to should be rendered in
+     * @param objectIds The corresponding object key defined in the textAreas lookup variable.
+     * @// TODO: 1/05/2022 Add complimenting method to accept panelId
+     * @authors Zac Adams
+     */
     public void addTextAreasToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(textAreas.get(objectId));
         }
     }
+    /**
+     * Method to add a single or multiple textFields to a particular panel.
+     * @param panel The panel the objects to should be rendered in.
+     * @param objectIds The corresponding object key defined in the textFields lookup variable.
+     * @// TODO: 1/05/2022 Add complimenting method to accept panelId
+     * @authors Zac Adams
+     */
     public void addTextFieldsToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(textFields.get(objectId));
         }
     }
-    public void addFileChoosersToPanel(JPanel panel, String... objectIds) {
+    /**
+     * Method to add a single or multiple fileChoosers to a particular panel
+     * @param panel The panel the objects to should be rendered in
+     * @param objectIds The corresponding object key defined in the fileChoosers lookup variable
+     * @deprecated This method is obsolete as it does not fit the requirements nor function as
+     *      originally expected. FileChoosers have no explicit UI.
+     * @// TODO: 1/05/2022 Ensure method can be removed safely
+     * @authors Zac Adams
+     */
+    @Deprecated void addFileChoosersToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(fileChoosers.get(objectId));
         }
     }
+    /**
+     * Method to add a single or multiple comboBoxes to a particular panel
+     * @param panel The panel the objects to should be rendered in
+     * @param objectIds The corresponding object key defined in the comboBoxes lookup variable
+     * @// TODO: 1/05/2022 Add complimenting method to accept panelId
+     * @authors Zac Adams
+     */
     public void addComboBoxesToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(comboBoxes.get(objectId));
         }
     }
+    /**
+     * Method to add a single or multiple checkBoxes to a particular panel
+     * @param panel The panel the objects to should be rendered in
+     * @param objectIds The corresponding object key defined in the checkBoxes lookup variable
+     * @// TODO: 1/05/2022 Add complimenting method to accept panelId
+     * @authors Zac Adams
+     */
     public void addCheckBoxesToPanel(JPanel panel, String... objectIds) {
         for (String objectId: objectIds) {
             panel.add(checkBoxes.get(objectId));
         }
     }
 
-
-    /**
-     * Configures the frame with default variables
-     */
     @Override
     public void configureFrame() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(viewWidth, viewHeight));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -123,7 +172,9 @@ public abstract class DefaultView<C> extends JFrame implements IView, Runnable, 
      * @param actionListener An ActionListener
      * @param width Preferred width of the button
      * @param height Preferred height of the button
-     * @return A new button */
+     * @return A new button
+     * @authors Zac Adams, Aaron Nolan
+     */
     @Override
     public JButton createButton(String withText, int width, int height, ActionListener actionListener) {
         JButton button = new JButton();
@@ -137,9 +188,11 @@ public abstract class DefaultView<C> extends JFrame implements IView, Runnable, 
 
 
     /**
-     * Global process method for catching all button events.
-     * Can run common methods on all actions.
-     * @param e the event to be processed
+     * Global process method for catching all button events. Define the callback method to 'this' for
+     * this method to execute.
+     * Implement common action events here (e.g Go Home)
+     * @param e The event fired as a result of the action performed
+     * @authors Zac Adams
      */
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -21,6 +21,7 @@ public class DbConnectionInfo {
      * Session database info will be stored in here. Methods for modifying db session info can
      * go here, including save, read or reload.
      * @param file The location to the database connection file including file type and name.
+     * @authors Zac Adams, CAB302 Practical Files
      */
     public DbConnectionInfo(String file) throws ConnectionInfoException {
         Properties props = new Properties();
@@ -43,6 +44,7 @@ public class DbConnectionInfo {
      * Set the Connection Info properties to equal the file's data values.
      * Also handle string sanitation and validation.
      * @param props The properties loaded from the files input stream
+     * @authors Zac Adams, CAB302 Practical Files
      */
     private void setProps(Properties props) {
         // specify the data source, username and password
@@ -56,6 +58,7 @@ public class DbConnectionInfo {
      * Method to concat the url and schema as a string for DriverManager to point
      * to a specific database engine and database
      * @return A string containing the url and schema separated by a forward slash '/'
+     * @authors Zac Adams
      */
     public String Url() {
         return String.format("%s/%s",url,schema);
@@ -64,6 +67,7 @@ public class DbConnectionInfo {
     /**
      * Method to access the connection info instance's username
      * @return The username for the given connection info
+     * @authors Zac Adams
      */
     public String Username() {
         return username;
@@ -71,6 +75,7 @@ public class DbConnectionInfo {
     /**
      * Method to access the connection info instance's password
      * @return The password for the given connection info
+     * @authors Zac Adams
      */
     public String Password() {
         return password;
