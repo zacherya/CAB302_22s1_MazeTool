@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.OpenViewController;
+import Controllers.WelcomeViewController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,7 +34,7 @@ public class OpenView extends DefaultView<OpenViewController> {
         // Create panels
         panels.put("topPanel", new JPanel());
 
-        buttons.put("button1",createButton("←", 55, 30, this));
+        buttons.put("button1",createButton("←", 55, 30, this::backBtnAction));
         buttons.put("button2",createButton("hello", 55, 30, null));
         buttons.put("button3",createButton("asd", 55, 30, null));
 
@@ -46,5 +47,11 @@ public class OpenView extends DefaultView<OpenViewController> {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+    }
+
+    private void backBtnAction(ActionEvent actionEvent) {
+        System.out.println("Back button clicked");
+        _controller.disposeView();
+        WelcomeViewController newView = new WelcomeViewController();
     }
 }

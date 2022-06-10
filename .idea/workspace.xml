@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Helpers/Difficulty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/OpenViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/CustomMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataAccess/Providers/MazeDataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Difficulty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Editor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modals/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modals/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Maze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modals/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Open.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RandomMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/RandomMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/OpenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/OpenView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +35,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "inlay.hints"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Amazon Corretto/jdk17.0.3_6" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Amazon Corretto/jdk17.0.3_6" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Program" />
       <module name="CAB302_22s1_MazeTool_Project" />
