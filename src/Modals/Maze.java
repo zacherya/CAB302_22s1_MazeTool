@@ -1,12 +1,13 @@
 package Modals;
 import DataAccess.DtoModels.*;
+import java.time.*;
 
 /** The Maze class*/
 public class Maze extends Image {
     public String name;
     public String author;
-    public java.time.LocalDate created;
-    public java.time.LocalDate lastEdited;
+    public LocalDate created;
+    public LocalDate lastEdited;
     public int startPoint;
     public int endPoint;
     public Image logo;
@@ -32,9 +33,9 @@ public class Maze extends Image {
      * @param startPoint The cell location of the starting point for the maze
      * @param endPoint The cell location of the ending point of the maze
      * @param logo The logo image being used in the maze
-     * @authors Alex Hannah
+     * @authors Alex Hannah, Aarun Jury
      * */
-    public void Maze(String name, String author, java.time.LocalDate created, java.time.LocalDate lastEdited, int startPoint, int endPoint, Image logo){
+    public void Maze(String name, String author, LocalDate created, LocalDate lastEdited, int startPoint, int endPoint, Image logo){
         this.name = name;
         this.author = author;
         this.created = created;
