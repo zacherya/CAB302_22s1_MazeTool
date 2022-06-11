@@ -3,6 +3,7 @@ package Controllers;
 import DataAccess.Providers.MazeDataProvider;
 import Views.MazeView;
 import Modals.Maze;
+import Helpers.RandomMaze;
 
 public class MazeViewController extends DefaultController<Maze, MazeView>  {
     private MazeDataProvider _provider;
@@ -19,6 +20,8 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
         if(generateRandom) {
             // Configure maze to be random here
             _modal = new Maze();
+            RandomMaze myMaze = new RandomMaze(20,20,0);
+            myMaze.draw();
         } else {
             _modal = new Maze();
         }
