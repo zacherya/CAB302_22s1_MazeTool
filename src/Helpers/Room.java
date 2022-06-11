@@ -1,5 +1,7 @@
 package Helpers;
 
+//Room = edges in graph. This is inspired by an adaptation for Prim's algorithm:
+//https://github.com/eugenp/tutorials/blob/master/algorithms-modules/algorithms-miscellaneous-5/src/main/java/com/baeldung/algorithms/prim/Edge.java
 public class Room {
 
     private int distanceFromStart;

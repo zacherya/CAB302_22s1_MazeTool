@@ -90,14 +90,14 @@ public RandomMaze(int h, int l, double openDoorChance){
 
         while (!chain.empty()){
             int[] currentRoom = chain.peek();
-            int[][] neighbors = ungeneratedNeighbors(currentRoom[0], currentRoom[1]);
-            if (neighbors.length == 0){
+            int[][] neighbours = ungeneratedNeighbours(currentRoom[0], currentRoom[1]);
+            if (neighbours.length == 0){
                 chain.pop();
                 //System.out.println("back");
                 continue;
             }
 
-            int[] nextRoom = neighbors[(int) (Math.random() * neighbors.length)];
+            int[] nextRoom = neighbours[(int) (Math.random() * neighbours.length)];
             if (nextRoom[0] != currentRoom[0]){
                 if (nextRoom[0] < currentRoom[0]){
                     this.hDoors[nextRoom[0]][nextRoom[1]].open(); //advancing up
@@ -124,35 +124,35 @@ public RandomMaze(int h, int l, double openDoorChance){
 
     }
 
-    public int[][] ungeneratedNeighbors(int y, int x){
-        int[][] neighbors = new int[4][2];
+    public int[][] ungeneratedNeighbours(int y, int x){
+        int[][] neighbours = new int[4][2];
         int count = 0;
         if (y > 0 && !this.rooms[y-1][x].generated()){
-            neighbors[count][0] = y-1;
-            neighbors[count][1] = x;
+            neighbours[count][0] = y-1;
+            neighbours[count][1] = x;
             count++;
         }
         if (x > 0 && !this.rooms[y][x-1].generated()){
-            neighbors[count][0] = y;
-            neighbors[count][1] = x-1;
+            neighbours[count][0] = y;
+            neighbours[count][1] = x-1;
             count++;
         }
         if (y < this.height - 1 && !this.rooms[y+1][x].generated()){
-            neighbors[count][0] = y+1;
-            neighbors[count][1] = x;
+            neighbours[count][0] = y+1;
+            neighbours[count][1] = x;
             count++;
         }
         if (x < this.length - 1 && !this.rooms[y][x+1].generated()){
-            neighbors[count][0] = y;
-            neighbors[count][1] = x+1;
+            neighbours[count][0] = y;
+            neighbours[count][1] = x+1;
             count++;
         }
 
-        int[][] cutNeighbors = new int[count][2]; //remove unused spots
+        int[][] cutNeighbours = new int[count][2]; //remove unused spots
         for(int i = 0; i < count; i++){
-            cutNeighbors[i] = neighbors[i];
+            cutNeighbours[i] = neighbours[i];
         }
-        return cutNeighbors;
+        return cutNeighbours;
     }
 
     @Override
@@ -250,8 +250,8 @@ public RandomMaze(int h, int l, double openDoorChance){
         return StdDraw.extractGraphic();
     }
 
-    public void drawSolution(){ //Djikstra
-        this.rooms[0][0].setDistance(0);
+    public void drawSolution(){ //Dijkstra
+        this.rooms[0][0].setDistance(0);//distance from source to source is always 0
         this.rooms[0][0].visit();
 
         ArrayList<int[]> loRooms = new ArrayList<int[]>();
@@ -276,9 +276,7 @@ public RandomMaze(int h, int l, double openDoorChance){
             hiRooms = new ArrayList<int[]>();
         }
 
-
-
-        //Only colors the path to the end
+        //Only colours the path to the end
         StdDraw.setPenColor(StdDraw.RED);
         StdDraw.setPenRadius(0.005);
 
@@ -323,34 +321,34 @@ public RandomMaze(int h, int l, double openDoorChance){
     }
 
     public int[][] unvisitedAdjacents(int y, int x){ //yeah i know code recycling and all that
-        int[][] neighbors = new int[4][2];
+        int[][] neighbours = new int[4][2];
         int count = 0;
         if (y > 0 && !this.rooms[y-1][x].visited() && this.hDoors[y-1][x].isOpen()){
-            neighbors[count][0] = y-1;
-            neighbors[count][1] = x;
+            neighbours[count][0] = y-1;
+            neighbours[count][1] = x;
             count++;
         }
         if (x > 0 && !this.rooms[y][x-1].visited() && this.vDoors[y][x-1].isOpen()){
-            neighbors[count][0] = y;
-            neighbors[count][1] = x-1;
+            neighbours[count][0] = y;
+            neighbours[count][1] = x-1;
             count++;
         }
         if (y < this.height - 1 && !this.rooms[y+1][x].visited() && this.hDoors[y][x].isOpen()){
-            neighbors[count][0] = y+1;
-            neighbors[count][1] = x;
+            neighbours[count][0] = y+1;
+            neighbours[count][1] = x;
             count++;
         }
         if (x < this.length - 1 && !this.rooms[y][x+1].visited() && this.vDoors[y][x].isOpen()){
-            neighbors[count][0] = y;
-            neighbors[count][1] = x+1;
+            neighbours[count][0] = y;
+            neighbours[count][1] = x+1;
             count++;
         }
 
-        int[][] cutNeighbors = new int[count][2]; //remove unused spots
+        int[][] cutNeighbours = new int[count][2]; //remove unused spots
         for(int i = 0; i < count; i++){
-            cutNeighbors[i] = neighbors[i];
+            cutNeighbours[i] = neighbours[i];
         }
-        return cutNeighbors;
+        return cutNeighbours;
     }
 
     public static void main(String[] args){
