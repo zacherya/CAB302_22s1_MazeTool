@@ -246,7 +246,7 @@ public RandomMaze(int h, int l, double openDoorChance){
         StdDraw.show();
     }
 
-    public void drawSolution(){ //Dijkstra's because f u A*, way too much memory
+    public void drawSolution(){ //Djikstra
         this.rooms[0][0].setDistance(0);
         this.rooms[0][0].visit();
 
@@ -273,20 +273,6 @@ public RandomMaze(int h, int l, double openDoorChance){
         }
 
 
-        // Colors every block until end is hit
-	/*
-	Color[] colors = {StdDraw.RED, StdDraw.ORANGE, StdDraw.YELLOW, StdDraw.GREEN, StdDraw.BLUE, StdDraw.MAGENTA};
-	for(int i = 0; i < this.height; i++){
-	    for(int j = 0; j < this.length; j++){
-		int dist = this.rooms[i][j].getDistance();
-		if (dist != -1){
-		    StdDraw.setPenColor(colors[dist % 6]);
-		    StdDraw.filledSquare(j * 2, - (i * 2), 0.2);
-		}
-	    }
-	}
-	*/
-
 
         //Only colors the path to the end
         StdDraw.setPenColor(StdDraw.RED);
@@ -294,8 +280,6 @@ public RandomMaze(int h, int l, double openDoorChance){
 
         int[] currentRoom = {this.height - 1, this.length - 1};
         for(int d = this.rooms[this.height - 1][this.length - 1].getDistance() - 1; d > 0; d--){
-
-//	    StdDraw.show(); //enable for pretty
 
             if (currentRoom[0] > 0 && this.rooms[currentRoom[0] - 1][currentRoom[1]].getDistance() == d && this.hDoors[currentRoom[0]-1][currentRoom[1]].isOpen()){
                 currentRoom[0]--;
@@ -373,11 +357,6 @@ public RandomMaze(int h, int l, double openDoorChance){
 
         int[] dimensions = new int[2];
         int dimIndex = 0;
-
-        //if (args.length < 2){
-        //    System.err.println("Usage: java Maze h w [-h] [-o ODC] [-d] [-p]");
-        //    System.exit(args.length);
-        //}
 
         for(int i = 0; i < args.length; i++){
             String current = args[i];
