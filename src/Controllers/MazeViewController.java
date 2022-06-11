@@ -21,7 +21,7 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
             // Configure maze to be random here
             _modal = new Maze();
             RandomMaze myMaze = new RandomMaze(20,20,0);
-            myMaze.draw();
+            _view.insertMazeFrame(myMaze.draw());
         } else {
             _modal = new Maze();
         }

@@ -702,13 +702,13 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         frame.addKeyListener(std);    // JLabel cannot get keyboard focus
         frame.setFocusTraversalKeysEnabled(false);  // allow VK_TAB with isKeyPressed()
         frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);            // closes all windows
-        // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);      // closes only current window
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);            // closes all windows
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);      // closes only current window
         frame.setTitle("Standard Draw");
         frame.setJMenuBar(createMenuBar());
         frame.pack();
         frame.requestFocusInWindow();
-        frame.setVisible(true);
+        //frame.setVisible(true);
     }
 
     // create the menu bar (changed to private)
@@ -1719,6 +1719,11 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     public static void show() {
         onscreen.drawImage(offscreenImage, 0, 0, null);
         frame.repaint();
+    }
+
+    public static BufferedImage extractGraphic() {
+        show();
+        return onscreenImage;
     }
 
     // draw onscreen if defer is false

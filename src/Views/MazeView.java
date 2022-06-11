@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 /** The MazeView Class */
 public class MazeView extends DefaultView<MazeViewController> {
@@ -90,6 +91,12 @@ public class MazeView extends DefaultView<MazeViewController> {
         getContentPane().add(panels.get("leftPanel"), BorderLayout.LINE_START);
         getContentPane().add(panels.get("centrePanel"), BorderLayout.CENTER);
         getContentPane().add(panels.get("primary"));
+    }
+    public void insertMazeFrame(BufferedImage graphic) {
+        JLabel mazePic = new JLabel(new ImageIcon(graphic));
+        panels.get("primary").add(mazePic);
+        panels.get("primary").repaint();
+        repaint();
     }
 
     /** Event for a back button

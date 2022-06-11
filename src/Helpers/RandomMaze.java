@@ -3,9 +3,12 @@ package Helpers;
 import Helpers.Difficulty;
 import Modals.Image;
 import Views.StdDraw;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Stack;
 import java.util.ArrayList;
-import java.awt.Color;
 
 /** The Random Maze Class*/
 public class RandomMaze {
@@ -188,7 +191,7 @@ public RandomMaze(int h, int l, double openDoorChance){
         return mazeString;
     }
 
-    public void draw(){
+    public BufferedImage draw(){
         double scaler = 900.0 / Math.max(this.length * 2 + 1, this.height * 2 + 1); //Change the double value to your preferred maximum dimension in pixels
         StdDraw.setCanvasSize((int) (scaler *(this.length * 2 + 1)), (int) (scaler *(this.height * 2 + 1)));
         StdDraw.setYscale(- (this.height * 2 - 1) - 0.5, 1.5);
@@ -243,7 +246,8 @@ public RandomMaze(int h, int l, double openDoorChance){
         StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2 + 0.3,  - (currentRoom[0] * 2 - 0.3));
         StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2,  - (currentRoom[0] * 2 + 0.3));
         StdDraw.line(currentRoom[1] * 2 + 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2,  - (currentRoom[0] * 2 + 0.3));
-        StdDraw.show();
+        //StdDraw.show();
+        return StdDraw.extractGraphic();
     }
 
     public void drawSolution(){ //Djikstra
