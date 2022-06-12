@@ -280,7 +280,7 @@ public RandomMaze(int h, int l, double openDoorChance){
 
         //Only colours the path to the end
         StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.setPenRadius(0.005);
+        StdDraw.setPenRadius(0.0028);
 
         int[] currentRoom = {this.height - 1, this.length - 1};
         for(int d = this.rooms[this.height - 1][this.length - 1].getDistance() - 1; d > 0; d--){
