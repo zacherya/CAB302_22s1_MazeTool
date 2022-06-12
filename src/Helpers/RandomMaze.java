@@ -194,7 +194,7 @@ public RandomMaze(int h, int l, double openDoorChance){
     public BufferedImage draw(){
         double scaler = 900.0 / Math.max(this.length * 2 + 1, this.height * 2 + 1); //Change the double value to your preferred maximum dimension in pixels
 //        StdDraw.setCanvasSize((int) (scaler *(this.length * 2 + 1)), (int) (scaler *(this.height * 2 + 1)));
-        StdDraw.setCanvasSize(100,100);
+        StdDraw.setCanvasSize(275,155);
 
         StdDraw.setYscale(- (this.height * 2 - 1) - 0.5, 1.5);
         StdDraw.setXscale(-1.5, (this.length * 2 - 1) + 0.5);
