@@ -112,7 +112,11 @@ public class MazeView extends DefaultView<MazeViewController> {
     /** Event for a solution button
      * @param actionEvent An ActionEvent
      * @authors Aaron Nolan */
-    private void solutionBtnAction(ActionEvent actionEvent) { System.out.println("Show solution button clicked"); }
+    private void solutionBtnAction(ActionEvent actionEvent) {
+        System.out.println("Show solution button clicked");
+        _controller.showMazeSolution();
+
+    }
 
     /** Event for a save button
      * @param actionEvent An ActionEvent

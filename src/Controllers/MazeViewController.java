@@ -8,6 +8,8 @@ import Helpers.RandomMaze;
 public class MazeViewController extends DefaultController<Maze, MazeView>  {
     private MazeDataProvider _provider;
 
+    RandomMaze myMaze;
+
     /**
      * Initalise a new MazeViewController to initiate a new View and modal
      * @param generateRandom Where the maze modal should have preset, automatically
@@ -20,12 +22,12 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
         if(generateRandom) {
             // Configure maze to be random here
             _modal = new Maze();
-            RandomMaze myMaze = new RandomMaze(20,20,0);
+            myMaze = new RandomMaze(20,20,0);
             _view.insertMazeFrame(myMaze.draw());
+
         } else {
             _modal = new Maze();
         }
-
     }
 
     /**
@@ -43,6 +45,11 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
      */
     public void disposeView() {
         _view.dispose();
+    }
+
+    public void showMazeSolution() {
+        myMaze.drawSolution();
+        updateView();
     }
 
 }
