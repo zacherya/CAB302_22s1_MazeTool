@@ -17,29 +17,6 @@ public class RandomMaze {
     private Room[][] rooms;
     private Door[][] vDoors, hDoors;
 
-//    public Difficulty difficulty;
-//
-//    /** Constructor
-//     * @authors Alex Hannah */
-//    public void RandomMaze(){
-//
-//    }
-//
-//    /** Overloaded Constructor
-//     * @param difficulty Enum Helpers.Difficulty setting for the Maze
-//     * @param startPoint Integer cell location of the starting point for the maze
-//     * @param endPoint Integer cell location of the ending point of the maze
-//     * @param logo An image being used for the included logo
-//     * @authors Alex Hannah */
-//    public void RandomMaze(Difficulty difficulty, int startPoint, int endPoint, Image logo){
-//        this.difficulty = difficulty;
-//    }
-//
-//    /** Method to generate the Random Maze
-//     * @authors Alex Hannah */
-//    public void generateMaze(){
-//
-//    }
 public RandomMaze(int h, int l, double openDoorChance){
 
         this.height = h;
@@ -155,46 +132,11 @@ public RandomMaze(int h, int l, double openDoorChance){
         return cutNeighbours;
     }
 
-    @Override
-    public String toString(){
-        String mazeString = "";
-
-        //top outer wall
-        for(int i = 0; i < 2 * this.length + 1; i++){
-            mazeString += "X";
-        }
-        mazeString += "\n";
-
-
-        for(int i = 0; i < 2 * this.height - 1; i++){
-            String lineString = "X"; //left outer wall
-
-            if (i % 2 == 0){
-                for(int j = 0; j < this.length - 1; j++){
-                    lineString += (this.vDoors[i/2][j].isOpen())? "  " : " X";
-                }
-                lineString += " X";
-            } else{
-                for(int j = 0; j < this.length; j++){
-                    lineString += (this.hDoors[i/2][j].isOpen())? " X" : "XX";
-                }
-            }
-            mazeString += lineString + "\n";
-        }
-
-        //bottom outer wall
-        for(int i = 0; i < 2 * this.length + 1; i++){
-            mazeString += "X";
-        }
-        mazeString += "\n";
-
-        return mazeString;
-    }
-
     public BufferedImage draw(){
-        double scaler = 900.0 / Math.max(this.length * 2 + 1, this.height * 2 + 1); //Change the double value to your preferred maximum dimension in pixels
-//        StdDraw.setCanvasSize((int) (scaler *(this.length * 2 + 1)), (int) (scaler *(this.height * 2 + 1)));
-        StdDraw.setCanvasSize(275,155);
+        //Change the double value to your preferred maximum dimension in pixels
+        double scaler = 155.0 / Math.max(this.length * 2 + 1, this.height * 2 + 1);
+        StdDraw.setCanvasSize((int) (scaler *(this.length * 2 + 1)), (int) (scaler *(this.height * 2 + 1)));
+//        StdDraw.setCanvasSize(275,155);
 
         StdDraw.setYscale(- (this.height * 2 - 1) - 0.5, 1.5);
         StdDraw.setXscale(-1.5, (this.length * 2 - 1) + 0.5);
@@ -235,10 +177,9 @@ public RandomMaze(int h, int l, double openDoorChance){
             StdDraw.filledSquare(this.length * 2 - 1, -i, 0.5);
         }
 
-
         int[] currentRoom = {this.height - 1, this.length - 1};
         StdDraw.setPenColor(StdDraw.BLACK);
-        StdDraw.setPenRadius(0.006);
+        StdDraw.setPenRadius(0.001);
 
         //Draw start triangle
         StdDraw.line(-.3,.3,.3,.3);
@@ -324,7 +265,6 @@ public RandomMaze(int h, int l, double openDoorChance){
             }
         }
         StdDraw.show();
-
     }
 
     public int[][] unvisitedAdjacents(int y, int x){ //yeah i know code recycling and all that
@@ -357,91 +297,91 @@ public RandomMaze(int h, int l, double openDoorChance){
         }
         return cutNeighbours;
     }
-
-    public static void main(String[] args){
-        double odc = 0; //openDoorChance
-        boolean help = false; //
-        boolean draw = false;
-        boolean print = false;
-
-        int[] dimensions = new int[2];
-        int dimIndex = 0;
-
-        for(int i = 0; i < args.length; i++){
-            String current = args[i];
-            if (current.charAt(0) == '-'){ //option
-                if (current.length() != 2){
-                    System.err.println("No combining options! Invalid option: " + current);
-                    System.exit(-1);
-                }
-                switch(current.charAt(1)){
-                    case 'h':
-                        System.out.println("Usage: java Maze h w [-h] [-o ODC] [-d] [-t] [-p]");
-                        System.out.println("-h Shows help");
-                        System.out.println("-o Opens doors to create loops in the otherwise perfect maze, probability of ODC");
-                        System.out.println("-d Draws the solution with triangles");
-                        System.out.println("-p If present, prints the maze to stdout instead of drawing it");
-                        System.out.println("h w Height and Width of the maze, in squares.");
-                        System.exit(0);
-
-                    case 'o':
-                        try{
-                            odc = Double.parseDouble(args[++i]);
-                        }
-                        catch(NumberFormatException e){
-                            System.err.println("Invalid open door chance: " + args[i]);
-                            System.exit(-2);
-                        }
-                        catch(ArrayIndexOutOfBoundsException e){
-                            System.err.println("No open door chance specified");
-                            System.exit(-3);
-                        }
-                        break;
-
-                    case 'd':
-                        draw = true;
-                        break;
-
-                    case 'p':
-                        print = true;
-                        break;
-
-                    default:
-                        System.err.println("Invalid option: " + current);
-                        System.exit(-4);
-                }
-            }
-
-            else{ //dimension
-                if (dimIndex < 2){
-                    try{
-                        dimensions[dimIndex] = Integer.parseInt(current);
-                    }
-                    catch(NumberFormatException e){
-                        System.err.println("Dimensions come first! Invalid maze dimensions: " + current);
-                        System.exit(3);
-                    }
-                    if (dimensions[dimIndex++] < 1){
-                        System.err.println("Dimensions come first! Invalid maze dimensions: " + current);
-                        System.exit(4);
-                    }
-                }
-            }
-        }
-
-        if (dimensions[0] == 0 || dimensions[1] == 0){
-            System.err.println("Unspecified maze dimensions");
-            System.exit(5);
-        }
-
-        RandomMaze myMaze = new RandomMaze(dimensions[0], dimensions[1], odc);
-
-        if (print) System.out.println(myMaze);
-        else{
-            myMaze.draw();
-            if (draw) myMaze.toggleSolution(true);
-        }
-
-    }
+//for deletion
+//    public static void main(String[] args){
+//        double odc = 0; //openDoorChance
+//        boolean help = false; //
+//        boolean draw = false;
+//        boolean print = false;
+//
+//        int[] dimensions = new int[2];
+//        int dimIndex = 0;
+//
+//        for(int i = 0; i < args.length; i++){
+//            String current = args[i];
+//            if (current.charAt(0) == '-'){ //option
+//                if (current.length() != 2){
+//                    System.err.println("No combining options! Invalid option: " + current);
+//                    System.exit(-1);
+//                }
+//                switch(current.charAt(1)){
+//                    case 'h':
+//                        System.out.println("Usage: java Maze h w [-h] [-o ODC] [-d] [-t] [-p]");
+//                        System.out.println("-h Shows help");
+//                        System.out.println("-o Opens doors to create loops in the otherwise perfect maze, probability of ODC");
+//                        System.out.println("-d Draws the solution with triangles");
+//                        System.out.println("-p If present, prints the maze to stdout instead of drawing it");
+//                        System.out.println("h w Height and Width of the maze, in squares.");
+//                        System.exit(0);
+//
+//                    case 'o':
+//                        try{
+//                            odc = Double.parseDouble(args[++i]);
+//                        }
+//                        catch(NumberFormatException e){
+//                            System.err.println("Invalid open door chance: " + args[i]);
+//                            System.exit(-2);
+//                        }
+//                        catch(ArrayIndexOutOfBoundsException e){
+//                            System.err.println("No open door chance specified");
+//                            System.exit(-3);
+//                        }
+//                        break;
+//
+//                    case 'd':
+//                        draw = true;
+//                        break;
+//
+//                    case 'p':
+//                        print = true;
+//                        break;
+//
+//                    default:
+//                        System.err.println("Invalid option: " + current);
+//                        System.exit(-4);
+//                }
+//            }
+//
+//            else{ //dimension
+//                if (dimIndex < 2){
+//                    try{
+//                        dimensions[dimIndex] = Integer.parseInt(current);
+//                    }
+//                    catch(NumberFormatException e){
+//                        System.err.println("Dimensions come first! Invalid maze dimensions: " + current);
+//                        System.exit(3);
+//                    }
+//                    if (dimensions[dimIndex++] < 1){
+//                        System.err.println("Dimensions come first! Invalid maze dimensions: " + current);
+//                        System.exit(4);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (dimensions[0] == 0 || dimensions[1] == 0){
+//            System.err.println("Unspecified maze dimensions");
+//            System.exit(5);
+//        }
+//
+//        RandomMaze myMaze = new RandomMaze(dimensions[0], dimensions[1], odc);
+//
+//        if (print) System.out.println(myMaze);
+//        else{
+//            myMaze.draw();
+//            if (draw) myMaze.toggleSolution(true);
+//        }
+//
+//    }
 
 }
