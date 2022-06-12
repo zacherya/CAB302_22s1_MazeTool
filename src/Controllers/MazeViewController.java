@@ -9,6 +9,15 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
     private MazeDataProvider _provider;
 
     RandomMaze myMaze;
+    private boolean toggleStatus = false;
+
+    public boolean getToggleStatus() {
+        return toggleStatus;
+    }
+
+    public void setToggleStatus(Boolean newStatus) {
+        this.toggleStatus = newStatus;
+    }
 
     /**
      * Initalise a new MazeViewController to initiate a new View and modal
@@ -47,8 +56,12 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
         _view.dispose();
     }
 
-    public void showMazeSolution() {
-        myMaze.drawSolution();
+    public void toggleMazeSolution() {
+        if (!toggleStatus) {
+            myMaze.toggleSolution(true);
+        } else {
+            myMaze.toggleSolution(false);
+        }
         updateView();
     }
 

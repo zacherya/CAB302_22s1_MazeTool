@@ -252,7 +252,7 @@ public RandomMaze(int h, int l, double openDoorChance){
         return StdDraw.extractGraphic();
     }
 
-    public void drawSolution(){ //Dijkstra
+    public void toggleSolution(Boolean display){ //Dijkstra
         this.rooms[0][0].setDistance(0);//distance from source to source is always 0
         this.rooms[0][0].visit();
 
@@ -278,9 +278,14 @@ public RandomMaze(int h, int l, double openDoorChance){
             hiRooms = new ArrayList<int[]>();
         }
 
-        //Only colours the path to the end
-        StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.setPenRadius(0.0028);
+        // Only colours the path to the end
+        if (display) {
+            StdDraw.setPenColor(StdDraw.RED);
+            StdDraw.setPenRadius(0.0012);
+        } else {
+            StdDraw.setPenColor(StdDraw.WHITE);
+            StdDraw.setPenRadius(0.0025);
+        }
 
         int[] currentRoom = {this.height - 1, this.length - 1};
         for(int d = this.rooms[this.height - 1][this.length - 1].getDistance() - 1; d > 0; d--){
@@ -434,7 +439,7 @@ public RandomMaze(int h, int l, double openDoorChance){
         if (print) System.out.println(myMaze);
         else{
             myMaze.draw();
-            if (draw) myMaze.drawSolution();
+            if (draw) myMaze.toggleSolution(true);
         }
 
     }

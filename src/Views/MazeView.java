@@ -6,8 +6,9 @@ import Controllers.WelcomeViewController;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+
+import static java.lang.String.format;
 
 /** The MazeView Class */
 public class MazeView extends DefaultView<MazeViewController> {
@@ -114,8 +115,10 @@ public class MazeView extends DefaultView<MazeViewController> {
      * @authors Aaron Nolan */
     private void solutionBtnAction(ActionEvent actionEvent) {
         System.out.println("Show solution button clicked");
-        _controller.showMazeSolution();
-
+        _controller.toggleMazeSolution();
+        _controller.setToggleStatus(!_controller.getToggleStatus());
+        buttons.get("solutionBtn").setText(format("Show solution: %b", _controller.getToggleStatus()));
+        repaint();
     }
 
     /** Event for a save button
