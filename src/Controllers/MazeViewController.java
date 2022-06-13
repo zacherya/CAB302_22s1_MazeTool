@@ -9,14 +9,10 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
     private MazeDataProvider _provider;
 
     RandomMaze myMaze;
-    private boolean toggleStatus = false;
+    private boolean showSolution = false;
 
-    public boolean getToggleStatus() {
-        return toggleStatus;
-    }
-
-    public void setToggleStatus(Boolean newStatus) {
-        this.toggleStatus = newStatus;
+    public Boolean solutionShowing() {
+        return showSolution;
     }
 
     /**
@@ -57,11 +53,8 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
     }
 
     public void toggleMazeSolution() {
-        if (!toggleStatus) {
-            myMaze.toggleSolution(true);
-        } else {
-            myMaze.toggleSolution(false);
-        }
+        showSolution = !showSolution;
+        myMaze.toggleSolution(showSolution);
         updateView();
     }
 

@@ -116,8 +116,12 @@ public class MazeView extends DefaultView<MazeViewController> {
     private void solutionBtnAction(ActionEvent actionEvent) {
         System.out.println("Show solution button clicked");
         _controller.toggleMazeSolution();
-        _controller.setToggleStatus(!_controller.getToggleStatus());
-        buttons.get("solutionBtn").setText(format("Show solution: %b", _controller.getToggleStatus()));
+        if(_controller.solutionShowing()) {
+            buttons.get("solutionBtn").setText("Hide solution");
+        } else {
+            buttons.get("solutionBtn").setText("Show solution");
+        }
+
         repaint();
     }
 
