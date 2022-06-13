@@ -7,7 +7,8 @@
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MazeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/RandomMaze.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modals/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Maze.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +47,20 @@
   }
 }</component>
   <component name="RunManager" selected="Application.Program">
+    <configuration name="Modals.Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Modals.Maze" />
+      <module name="CAB302_22s1_MazeTool_Project" />
+      <option name="PROGRAM_PARAMETERS" value="20 20 -d" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Modals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -55,28 +70,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomMaze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Helpers.RandomMaze" />
-      <module name="CAB302_22s1_MazeTool_Project" />
-      <option name="PROGRAM_PARAMETERS" value="20 20 -d" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Helpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.Modals.Maze" />
       <item itemvalue="Application.Program" />
-      <item itemvalue="Application.RandomMaze" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Program" />
-        <item itemvalue="Application.RandomMaze" />
+        <item itemvalue="Application.Modals.Maze" />
       </list>
     </recent_temporary>
   </component>

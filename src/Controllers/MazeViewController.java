@@ -3,12 +3,9 @@ package Controllers;
 import DataAccess.Providers.MazeDataProvider;
 import Views.MazeView;
 import Modals.Maze;
-import Helpers.RandomMaze;
 
-public class MazeViewController extends DefaultController<Maze, MazeView>  {
+public class MazeViewController extends DefaultController<Modals.Maze, MazeView>  {
     private MazeDataProvider _provider;
-
-    RandomMaze myMaze;
     private boolean showSolution = false;
 
     public Boolean solutionShowing() {
@@ -26,9 +23,8 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
         _view = new MazeView(this);
         if(generateRandom) {
             // Configure maze to be random here
-            _modal = new Maze();
-            myMaze = new RandomMaze(20,20,0);
-            _view.insertMazeFrame(myMaze.draw());
+            _modal = new Maze(20,20,0);
+            _view.insertMazeFrame(_modal.draw());
 
         } else {
             _modal = new Maze();
@@ -54,7 +50,7 @@ public class MazeViewController extends DefaultController<Maze, MazeView>  {
 
     public void toggleMazeSolution() {
         showSolution = !showSolution;
-        myMaze.toggleSolution(showSolution);
+        _modal.toggleSolution(showSolution);
         updateView();
     }
 
