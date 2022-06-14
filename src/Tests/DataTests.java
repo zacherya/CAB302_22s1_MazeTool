@@ -15,9 +15,19 @@ public class DataTests {
      * Expect Failure
      */
     @Test
-    public void CreateBadMaze() {
-        assertThrows(Exception.class, () -> {
-
+    public void CreateBadSizeMaze() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            maze = new Maze(-5,-10,0);
+        });
+    }
+    /**
+     * Create random maze object
+     * Expect Failure
+     */
+    @Test
+    public void CreateBadChanceMaze() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            maze = new Maze(5,5,-2.222);
         });
     }
     /**

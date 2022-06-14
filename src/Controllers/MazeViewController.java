@@ -1,8 +1,11 @@
 package Controllers;
 
 import DataAccess.Providers.MazeDataProvider;
+import Exceptions.MazeCreationException;
 import Views.MazeView;
 import Modals.Maze;
+
+import javax.swing.*;
 
 public class MazeViewController extends DefaultController<Modals.Maze, MazeView>  {
     private MazeDataProvider _provider;
@@ -23,8 +26,15 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
         _view = new MazeView(this);
         if(generateRandom) {
             // Configure maze to be random here
-            _modal = new Maze(20,20,0);
-            _view.insertMazeFrame(_modal.draw());
+            try {
+                _modal = new Maze(20,20,0);
+                _view.insertMazeFrame(_modal.draw());
+            } catch (MazeCreationException e) {
+                JOptionPane.showMessageDialog(_view, "There was an issue generating the maze!");
+                disposeView();
+                new WelcomeViewController();
+            }
+
 
         } else {
             _modal = new Maze();

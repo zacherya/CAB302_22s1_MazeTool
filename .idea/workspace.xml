@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/MazeCreationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAB302_22s1_MazeTool_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CAB302_22s1_MazeTool_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/DataTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/DataTests.java" afterDir="false" />
     </list>

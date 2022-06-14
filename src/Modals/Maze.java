@@ -1,6 +1,7 @@
 package Modals;
 
 import DataAccess.DtoModels.MazeDto;
+import Exceptions.MazeCreationException;
 import Helpers.Door;
 import Helpers.Room;
 import Views.StdDraw;
@@ -22,11 +23,22 @@ public class Maze {
     public Maze(MazeDto mazeDbObject) {
         // unwrap maze from db here
     }
-    public Maze(int h, int l, double openDoorChance){
-        this.newMaze(h,l,openDoorChance);
+    public Maze(int h, int l, double openDoorChance) throws MazeCreationException {
+        try {
+            this.newMaze(h,l,openDoorChance);
+        } catch (IllegalArgumentException iae) {
+            throw new MazeCreationException(iae.getMessage());
+        }
+
     }
 
-    public void newMaze(int h, int l, double openDoorChance) {
+    public void newMaze(int h, int l, double openDoorChance) throws IllegalArgumentException {
+        if(h < 5 || l < 5) {
+            throw new IllegalArgumentException("The maze must be at least 5x5");
+        }
+        if(openDoorChance < 0) {
+            throw new IllegalArgumentException("The maze must be have an open door chance greater or equal to 0");
+        }
         this.height = h;
         this.length = l;
 
