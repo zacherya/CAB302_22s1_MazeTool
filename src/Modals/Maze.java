@@ -1,5 +1,6 @@
 package Modals;
 
+import DataAccess.DtoModels.MazeDto;
 import Helpers.Door;
 import Helpers.Room;
 import Views.StdDraw;
@@ -17,6 +18,9 @@ public class Maze {
 
     public Maze() {
 
+    }
+    public Maze(MazeDto mazeDbObject) {
+        // unwrap maze from db here
     }
     public Maze(int h, int l, double openDoorChance){
         this.newMaze(h,l,openDoorChance);
