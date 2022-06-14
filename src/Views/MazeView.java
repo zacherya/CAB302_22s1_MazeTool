@@ -4,6 +4,7 @@ import Controllers.MazeViewController;
 import Controllers.WelcomeViewController;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
@@ -19,9 +20,13 @@ public class MazeView extends DefaultView<MazeViewController> {
     private static final int RIGHT_BTN_HEIGHT = 30;
 
     // File selectors
-    private JFileChooser logoImageSelector = new JFileChooser();
-    private JFileChooser entryImageSelector = new JFileChooser();
-    private JFileChooser exitImageSelector = new JFileChooser();
+    // TODO: Clean-up and refactor this implementation
+    private final String USER_DIRECTORY = System.getProperty("user.home");
+    private final String PATH = "/Desktop";
+    private final FileNameExtensionFilter FILTER = new FileNameExtensionFilter("Image Files", "jpg", "png", "jpeg");
+    private JFileChooser logoImageSelector = new JFileChooser(USER_DIRECTORY + PATH);
+    private JFileChooser entryImageSelector = new JFileChooser(USER_DIRECTORY + PATH);
+    private JFileChooser exitImageSelector = new JFileChooser(USER_DIRECTORY + PATH);
 
     /** Constructs and configures the view for Maze
      * @param controller The views controller access parameter
@@ -34,9 +39,7 @@ public class MazeView extends DefaultView<MazeViewController> {
 
         //Set Controller
         _controller = controller;
-
         readyFrame(this::addElements);
-
     }
 
     /**
@@ -44,6 +47,7 @@ public class MazeView extends DefaultView<MazeViewController> {
      * @authors Aaron Nolan, Zac Adams
      */
     private void addElements() {
+
         // Create panels
         panels.put("primary", new JPanel());
         panels.put("topPanel", new JPanel());
@@ -55,10 +59,9 @@ public class MazeView extends DefaultView<MazeViewController> {
         // Define panel custom attributes
         panels.get("centrePanel").setBackground(Color.WHITE);
 
-        // Create adn configure components for top panel
+        // Create and configure components for top panel
         textAreas.put("titleText",new JTextArea(1,57));
         textAreas.get("titleText").setText("Give your new maze a creative title..");
-
         buttons.put("backBtn",createButton("←", 55, 30, this::backBtnAction));
 
         // Create components for bottom panel
@@ -73,16 +76,14 @@ public class MazeView extends DefaultView<MazeViewController> {
 
         // Define Panel grids
         definePanelGrid("primary",1,1,0,0);
-//        definePanelGrid("topPanel",1,2,5,0);
+//      definePanelGrid("topPanel",1,2,5,0);
         definePanelGrid("bottomPanel",1,2,5,0);
         definePanelGrid("rightPanel",6,1,0,5);
 
         // Add elements to panels
         addButtonsToPanel(panels.get("topPanel"),"backBtn");
         addTextAreasToPanel(panels.get("topPanel"),"titleText");
-
         addButtonsToPanel(panels.get("rightPanel"),"solutionBtn","logoImageBtn","entryImageBtn","exitImageBtn");
-
         addButtonsToPanel(panels.get("bottomPanel"),"saveBtn","exportBtn");
 
         // Add panels to the JFrame
@@ -140,6 +141,7 @@ public class MazeView extends DefaultView<MazeViewController> {
      * @authors Aaron Nolan*/
     private void logoImageBtnAction(ActionEvent actionEvent) {
         System.out.println("Select logo image button clicked");
+        logoImageSelector.setFileFilter(FILTER);
         logoImageSelector.showOpenDialog(this);
     }
 
@@ -148,6 +150,7 @@ public class MazeView extends DefaultView<MazeViewController> {
      * @authors Aaron Nolan */
     private void entryImageBtnAction(ActionEvent actionEvent) {
         System.out.println("Select entry image button clicked");
+        entryImageSelector.setFileFilter(FILTER);
         entryImageSelector.showOpenDialog(this);
     }
 
@@ -156,6 +159,7 @@ public class MazeView extends DefaultView<MazeViewController> {
      * @authors Aaron Nolan */
     private void exitImageBtnAction(ActionEvent actionEvent) {
         System.out.println("Select exit image button clicked");
+        exitImageSelector.setFileFilter(FILTER);
         exitImageSelector.showOpenDialog(this);
     }
 
