@@ -8,6 +8,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 import static java.lang.String.format;
 
@@ -94,6 +95,7 @@ public class MazeView extends DefaultView<MazeViewController> {
         getContentPane().add(panels.get("centrePanel"), BorderLayout.CENTER);
         getContentPane().add(panels.get("primary"));
     }
+
     public void insertMazeFrame(BufferedImage graphic) {
         JLabel mazePic = new JLabel(new ImageIcon(graphic));
         panels.get("primary").add(mazePic);
@@ -122,7 +124,6 @@ public class MazeView extends DefaultView<MazeViewController> {
         } else {
             buttons.get("solutionBtn").setText("Show solution");
         }
-
         repaint();
     }
 
@@ -140,27 +141,38 @@ public class MazeView extends DefaultView<MazeViewController> {
      * @param actionEvent An ActionEvent
      * @authors Aaron Nolan*/
     private void logoImageBtnAction(ActionEvent actionEvent) {
-        System.out.println("Select logo image button clicked");
-        logoImageSelector.setFileFilter(FILTER);
-        logoImageSelector.showOpenDialog(this);
+        File selectedFile = getFile(logoImageSelector);
+        System.out.println("Logo image: " + selectedFile);
     }
 
     /** Event for an entry image button
      * @param actionEvent An ActionEvent
      * @authors Aaron Nolan */
     private void entryImageBtnAction(ActionEvent actionEvent) {
-        System.out.println("Select entry image button clicked");
-        entryImageSelector.setFileFilter(FILTER);
-        entryImageSelector.showOpenDialog(this);
+        File selectedFile = getFile(entryImageSelector);
+        System.out.println("Entry image: " + selectedFile);
     }
 
     /** Event for an exit image button
      * @param actionEvent An ActionEvent
      * @authors Aaron Nolan */
     private void exitImageBtnAction(ActionEvent actionEvent) {
-        System.out.println("Select exit image button clicked");
-        exitImageSelector.setFileFilter(FILTER);
-        exitImageSelector.showOpenDialog(this);
+        File selectedFile = getFile(exitImageSelector);
+        System.out.println("Exit image: " + selectedFile);
+    }
+
+    /**
+     * Handles the logic for selecting and returning a valid file
+     * @param jFileChooser A JFileChooser
+     * @return An image file selected by the user
+     * @authors Aaron Nolan */
+    private File getFile(JFileChooser jFileChooser) {
+        jFileChooser.setFileFilter(FILTER);
+        int selectedOption = jFileChooser.showOpenDialog(this);
+        if (selectedOption == JFileChooser.APPROVE_OPTION) {
+            return new File(jFileChooser.getSelectedFile().getAbsolutePath());
+        }
+        return null;
     }
 
     @Override
