@@ -1,0 +1,37 @@
+<project name="CAB302_22s1_MazeTool">
+
+    <path id="junit.classpath">
+        <fileset dir="lib">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="target" />
+        <javac srcdir="src" destdir="target" includeantruntime="false">
+            <classpath refid="junit.classpath" />
+        </javac>
+    </target>
+
+    <target name="test">
+        <mkdir dir="testtarget" />
+        <mkdir dir="testresults" />
+        <javac srcdir="Tests" destdir="testtarget" includeantruntime="false">
+            <classpath refid="junit.classpath" />
+            <classpath location="target" />
+        </javac>
+
+        <junitlauncher printsummary="true" failureproperty="junit.failure">
+            <classpath refid="junit.classpath" />
+            <classpath location="target" />
+            <classpath location="testtarget" />
+            <testclasses outputdir="testresults">
+                <fileset dir="testtarget" includes="**/*.class" />
+                <listener type="legacy-plain" />
+            </testclasses>
+        </junitlauncher>
+
+        <fail if="junit.failure" />
+
+    </target>
+</project>

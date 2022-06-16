@@ -1,5 +1,3 @@
-package Tests;
-
 import Modals.Maze;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,9 +22,7 @@ public class DataTests {
      */
     @Test
     public void CreateBadSizeMaze() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            maze = new Maze(-5,-10,0);
-        });
+        assertThrows(IllegalArgumentException.class, () -> maze = new Maze(-5,-10,0));
     }
     /**
      * Create random maze object
@@ -34,9 +30,7 @@ public class DataTests {
      */
     @Test
     public void CreateBadChanceMaze() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            maze = new Maze(5,5,-2.222);
-        });
+        assertThrows(IllegalArgumentException.class, () -> maze = new Maze(5,5,-2.222));
     }
     /**
      * Create random maze object
