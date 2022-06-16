@@ -32,8 +32,16 @@
         </junitlauncher>
         <fail if="junit.failure" />
     </target>
+
     <target name="documentation">
         <mkdir dir="doc" />
         <javadoc sourcepath="src" destdir="doc" />
     </target>
+
+    <target name="jar" depends="compile, test">
+        <mkdir dir="artifacts" />
+        <jar jarfile="artifacts/CAB302_22s1_MazeTool.jar" basedir="target" manifest="jar-manifest.txt" />
+
+    </target>
+
 </project>
