@@ -41,7 +41,14 @@
     <target name="jar" depends="compile, test">
         <mkdir dir="artifacts" />
         <jar jarfile="artifacts/CAB302_22s1_MazeTool.jar" basedir="target" manifest="jar-manifest.txt" />
+    </target>
 
+    <target name="clean">
+        <delete dir="target" quiet="true" />
+        <delete dir="doc" quiet="true" />
+        <delete dir="artifacts" quiet="true" />
+        <delete dir="testresults" quiet="true" />
+        <delete dir="testtarget" quiet="true" />
     </target>
 
 </project>
