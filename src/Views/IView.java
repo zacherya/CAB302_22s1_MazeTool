@@ -11,7 +11,7 @@ public interface IView {
      *      minimum size, layout and resizeable.
      * This method is called upon construction of the view, before
      * any frame content is added.
-     * @authors Zac Adams
+     * @author Zac Adams
      */
     void configureFrame();
 
@@ -20,7 +20,7 @@ public interface IView {
      * and calls methods to render, paint, set location and make visible.
      * The callback method is executed before any rendering of the Frame.
      * @param callback A method defined in the view, called before any rendering.
-     * @authors Zac Adams
+     * @author Zac Adams
      */
     void readyFrame(Runnable callback);
 
@@ -34,16 +34,16 @@ public interface IView {
      *                       Set to 'this' for the button to be handled by the generic
      *                       actionPerformed event listener.
      * @return An instance of a JButton with the configured properties
-     * @authors Zac Adams, Aaron Nolan
+     * @author Zac Adams, Aaron Nolan
      */
     JButton createButton(String withText, int width, int height, ActionListener actionListener);
 
     /**
      * A generic action event listener method that requires implementation from ActionListener
-     * to function. If an events callback method is defined as 'this', the button
+     * to function. If an event callback method is defined as 'this', the button
      * will default to this method.
      * @param e The event fired as a result of the action performed
-     * @authors Zac Adams
+     * @author Zac Adams
      */
     void actionPerformed(ActionEvent e);
 

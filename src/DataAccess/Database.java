@@ -3,13 +3,13 @@ package DataAccess;
 import Exceptions.ConnectionInfoException;
 
 import java.sql.Connection;
-import java.util.Properties;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Used to initialise and manage the database connection.
+ * @author Zac Adams
+ */
 public class Database {
     private static Connection INSTANCE;
     private static DbConnectionInfo DbInfo;
@@ -21,14 +21,14 @@ public class Database {
      * @see Connection Database.Instance() to obtain a database instance
      */
     private Database() {
-        Initalise();
+        Initialise();
     }
 
     /**
-     * Initalise the database connection using the props file in the root directory
+     * Initialise the database connection using the props file in the root directory
      * and store the connection instance.
      */
-    private void Initalise() {
+    private void Initialise() {
         try {
             // Get connection info object
             DbInfo = new DbConnectionInfo("./db.props");
@@ -44,7 +44,7 @@ public class Database {
 
     /**
      * Method to control and obtain the runtime instance of the Database connection.
-     * If it does not already exist, a new instance will be created and returned
+     * If it does not already exist, a new instance will be created and returned.
      * @return The runtime environments current instance of the database connection
      */
     public static Connection Instance() {

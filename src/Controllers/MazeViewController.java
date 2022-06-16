@@ -7,19 +7,29 @@ import Modals.Maze;
 
 import javax.swing.*;
 
+/**
+ * Initiates and controls associated functionality for a maze, manipulating the view as required.
+ * @author Zac Adams, Aaron Nolan
+ */
 public class MazeViewController extends DefaultController<Modals.Maze, MazeView>  {
+
     private MazeDataProvider _provider;
     private boolean showSolution = false;
 
+    /**
+     * Get method that indicates if the solution to a maze is currently being displayed.
+     * @return true if showing, false if hidden
+     * @author Zac Adams, Aaron Nolan
+     */
     public Boolean solutionShowing() {
         return showSolution;
     }
 
     /**
-     * Initalise a new MazeViewController to initiate a new View and modal
-     * @param generateRandom Where the maze modal should have preset, automatically
+     * Initialise a new MazeViewController to initiate a new View and modal.
+     * @param generateRandom where the maze modal should have preset, automatically
      *                       generated data
-     * @authors Aaron Nolan, Zac Adams
+     * @author Aaron Nolan, Zac Adams
      */
     public MazeViewController(boolean generateRandom) {
         _provider = new MazeDataProvider();
@@ -34,8 +44,6 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
                 disposeView();
                 new WelcomeViewController();
             }
-
-
         } else {
             _modal = new Maze();
         }
@@ -43,7 +51,7 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
 
     /**
      * Update the view's UI changes
-     * @authors Aaron Nolan
+     * @author Aaron Nolan
      */
     public void updateView() {
         // TODO
@@ -52,12 +60,16 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
 
     /**
      * Dispose of the current view
-     * @authors Aaron Nolan
+     * @author Aaron Nolan
      */
     public void disposeView() {
         _view.dispose();
     }
 
+    /**
+     * Toggles the maze solution to display on and off.
+     * @author Zac Adams, Aaron Nolan
+     */
     public void toggleMazeSolution() {
         showSolution = !showSolution;
         _modal.toggleSolution(showSolution);

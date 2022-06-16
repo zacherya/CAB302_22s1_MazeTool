@@ -31,21 +31,21 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     /** Constructs and configures the view for Maze
      * @param controller The views controller access parameter
-     * @authors Aaron Nolan, Zac Adams
+     * @author Aaron Nolan, Zac Adams
      */
     public MazeView(MazeViewController controller) {
         // JFrame setup
         super("New Maze", 750,450);
         configureFrame();
 
-        //Set Controller
+        // Set Controller
         _controller = controller;
         readyFrame(this::addElements);
     }
 
     /**
      * Creates and adds the elements to the view's frame
-     * @authors Aaron Nolan, Zac Adams
+     * @author Aaron Nolan, Zac Adams
      */
     private void addElements() {
 
@@ -105,7 +105,7 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     /** Event for a back button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan
+     * @author Aaron Nolan
      */
     private void backBtnAction(ActionEvent actionEvent) {
         System.out.println("Back button clicked");
@@ -115,7 +115,7 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     /** Event for a solution button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan */
+     * @author Aaron Nolan */
     private void solutionBtnAction(ActionEvent actionEvent) {
         System.out.println("Show solution button clicked");
         _controller.toggleMazeSolution();
@@ -129,17 +129,17 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     /** Event for a save button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan */
+     * @author Aaron Nolan */
     private void saveBtnAction(ActionEvent actionEvent) { System.out.println("Save button clicked"); }
 
     /** Event for an export button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan */
+     * @author Aaron Nolan */
     private void exportBtnAction(ActionEvent actionEvent) { System.out.println("Export button clicked"); }
 
     /** Event for a logo image button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan*/
+     * @author Aaron Nolan*/
     private void logoImageBtnAction(ActionEvent actionEvent) {
         File selectedFile = getFile(logoImageSelector);
         System.out.println("Logo image: " + selectedFile);
@@ -147,7 +147,7 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     /** Event for an entry image button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan */
+     * @author Aaron Nolan */
     private void entryImageBtnAction(ActionEvent actionEvent) {
         File selectedFile = getFile(entryImageSelector);
         System.out.println("Entry image: " + selectedFile);
@@ -155,7 +155,7 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     /** Event for an exit image button
      * @param actionEvent An ActionEvent
-     * @authors Aaron Nolan */
+     * @author Aaron Nolan */
     private void exitImageBtnAction(ActionEvent actionEvent) {
         File selectedFile = getFile(exitImageSelector);
         System.out.println("Exit image: " + selectedFile);
@@ -165,7 +165,7 @@ public class MazeView extends DefaultView<MazeViewController> {
      * Handles the logic for selecting and returning a valid file
      * @param jFileChooser A JFileChooser
      * @return An image file selected by the user
-     * @authors Aaron Nolan */
+     * @author Aaron Nolan */
     private File getFile(JFileChooser jFileChooser) {
         jFileChooser.setFileFilter(FILTER);
         int selectedOption = jFileChooser.showOpenDialog(this);

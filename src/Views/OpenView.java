@@ -13,9 +13,9 @@ import java.util.List;
 public class OpenView extends DefaultView<OpenViewController> {
 
     /**
-     * Initalises the configuration and objects for the Open View frame
+     * Initialises the configuration and objects for the Open View frame.
      * @param controller
-     * @authors Zac Adams
+     * @author Zac Adams
      */
     public OpenView(OpenViewController controller) {
         super("Open Maze", 750, 450);
@@ -26,9 +26,9 @@ public class OpenView extends DefaultView<OpenViewController> {
     }
 
     /**
-     * Adds and configures the elements for the view's frame
-     * @authors Zac Adams
-     * @// TODO: 1/05/2022 Refactor and implement this method properly (Make gui relevant). 
+     * Adds and configures the elements for the view's frame.
+     * @author Zac Adams
+     * TODO: 1/05/2022 Refactor and implement this method properly (Make GUI relevant).
      */
     private void addFrameElements() {
         // Create panels
@@ -45,10 +45,13 @@ public class OpenView extends DefaultView<OpenViewController> {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {}
 
-    }
-
+    /**
+     * Returns the user to the welcome view.
+     * @param actionEvent the button to listen for an action on
+     * @author Alex Hannah, Aaron Nolan
+     */
     private void backBtnAction(ActionEvent actionEvent) {
         System.out.println("Back button clicked");
         _controller.disposeView();

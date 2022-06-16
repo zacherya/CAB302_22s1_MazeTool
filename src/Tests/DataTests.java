@@ -4,8 +4,16 @@ import Modals.Maze;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test suite for generating and storing maze data
+ * @author Zac Adams
+ */
 public class DataTests {
     Maze maze;
+
+    /**
+     * Begin each test with a new maze object
+     */
     @BeforeEach
     public void Start() {
         maze = new Maze();

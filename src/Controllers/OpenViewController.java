@@ -5,12 +5,16 @@ import Modals.Open;
 import Views.IView;
 import Views.OpenView;
 
+/**
+ * Initiates and controls associated functionality for retrieving, displaying and interacting with existing maze files.
+ * @author Aaron Nolan
+ */
 public class OpenViewController extends DefaultController<Open, OpenView> {
 
     private MazeDataProvider _provider;
 
     /**
-     *Initalise a new OpenViewController to intitiate a new View, Modal and data provider
+     *Initialise a new OpenViewController to initiate a new View, Modal and data provider
      */
     public OpenViewController() {
         _provider = new MazeDataProvider();
@@ -20,7 +24,7 @@ public class OpenViewController extends DefaultController<Open, OpenView> {
 
     /**
      * Update the view's UI changes
-     * @authors Aaron Nolan
+     * @author Aaron Nolan
      */
     public void updateView() {
         // TODO
@@ -29,7 +33,7 @@ public class OpenViewController extends DefaultController<Open, OpenView> {
 
     /**
      * Dispose of the current view
-     * @authors Aaron Nolan
+     * @author Aaron Nolan
      */
     public void disposeView() {
         _view.dispose();

@@ -10,26 +10,38 @@ import java.awt.image.BufferedImage;
 import java.util.Stack;
 import java.util.ArrayList;
 
-/** The Random Maze Class*/
+/**
+ * Handles the initialisation, drawing and other rendering methods for a maze.
+ */
 public class Maze {
 
     private int height, length;
     private Room[][] rooms;
     private Door[][] vDoors, hDoors;
 
-    public Maze() {
+    public Maze() {}
 
-    }
+    /**
+     * Unwraps the maze object stored in a database.
+     * @param mazeDbObject
+     */
     public Maze(MazeDto mazeDbObject) {
-        // unwrap maze from db here
+        // Unwrap maze from db here
     }
+
+    /**
+     * Generates a new maze based on the provided specifications.
+     * @param h height of the maze
+     * @param l length of the maze
+     * @param openDoorChance open door chance of the maze
+     * @throws MazeCreationException
+     */
     public Maze(int h, int l, double openDoorChance) throws MazeCreationException {
         try {
             this.newMaze(h,l,openDoorChance);
         } catch (IllegalArgumentException iae) {
             throw new MazeCreationException(iae.getMessage());
         }
-
     }
 
     public void newMaze(int h, int l, double openDoorChance) throws IllegalArgumentException {

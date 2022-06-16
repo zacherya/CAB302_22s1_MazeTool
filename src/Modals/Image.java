@@ -1,5 +1,5 @@
 package Modals;
-/** Class for Images */
+/** Class for Images. */
 public class Image {
 
 
@@ -7,26 +7,26 @@ public class Image {
     public int height;
     public int width;
 
-    /** Constructor
-     * @authors Alex Hannah */
+    /** Constructor.
+     * @author Alex Hannah */
     public void Image(){
 
     }
-    /** Overloaded Constructor
+    /** Overloaded Constructor.
      * @param fileName file location as a String
-     * @authors Alex Hannah */
+     * @author Alex Hannah */
     public void Image(String fileName){
         this.fileName = fileName;
     }
 
-    /** Scales the cell size of an image
-     * @authors Alex Hannah */
+    /** Scales the cell size of an image.
+     * @author Alex Hannah */
     public void scale(){
 
     }
-    /** Tells if an image is contained in a block of cells or not
+    /** Tells if an image is contained in a block of cells or not.
      * @return true if contained within cells, false otherwise
-     * @authors Alex Hannah */
+     * @author Alex Hannah */
     public boolean isContained(){
         return false;
     }
