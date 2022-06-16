@@ -13,7 +13,7 @@
         </javac>
     </target>
 
-    <target name="test">
+    <target name="test" depends="compile">
         <mkdir dir="testtarget" />
         <mkdir dir="testresults" />
         <javac srcdir="Tests" destdir="testtarget" includeantruntime="false">
@@ -30,8 +30,10 @@
                 <listener type="legacy-plain" />
             </testclasses>
         </junitlauncher>
-
         <fail if="junit.failure" />
-
+    </target>
+    <target name="documentation">
+        <mkdir dir="doc" />
+        <javadoc sourcepath="src" destdir="doc" />
     </target>
 </project>
