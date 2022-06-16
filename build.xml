@@ -1,4 +1,5 @@
-<project name="CAB302_22s1_MazeTool">
+<project name="CAB302_22s1_MazeTool" default="all">
+    <target name="all" depends="clean, compile, documentation, test, jar" />
 
     <path id="junit.classpath">
         <fileset dir="lib">
