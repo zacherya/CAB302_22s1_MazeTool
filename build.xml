@@ -1,5 +1,5 @@
 <project name="CAB302_22s1_MazeTool" default="all">
-    <target name="all" depends="clean, compile, documentation, test, jar" />
+    <target name="all" depends="compile, documentation, test, jar, clean" />
 
     <path id="junit.classpath">
         <fileset dir="lib">
@@ -31,7 +31,7 @@
                 <listener type="legacy-plain" />
             </testclasses>
         </junitlauncher>
-        <fail if="junit.failure" />
+        <fail if="junit.failure" message="Tests failed!" />
     </target>
 
     <target name="documentation">
@@ -45,9 +45,9 @@
     </target>
 
     <target name="clean">
+<!--        <delete dir="doc" quiet="true" />-->
+<!--        <delete dir="artifacts" quiet="true" />-->
         <delete dir="target" quiet="true" />
-        <delete dir="doc" quiet="true" />
-        <delete dir="artifacts" quiet="true" />
         <delete dir="testresults" quiet="true" />
         <delete dir="testtarget" quiet="true" />
     </target>
