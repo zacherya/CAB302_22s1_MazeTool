@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Test suite for generating and storing maze data
  * @author Zac Adams
  */
-public class DataTests {
+public class TestData {
     Maze maze;
 
     /**
