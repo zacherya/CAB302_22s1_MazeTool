@@ -48,6 +48,9 @@ public class Maze {
         if(h < 5 || l < 5) {
             throw new IllegalArgumentException("The maze must be at least 5x5");
         }
+        if(h > 100 || l > 100) {
+            throw new IllegalArgumentException("The maze can not be larger than 100x100");
+        }
         if(openDoorChance < 0) {
             throw new IllegalArgumentException("The maze must be have an open door chance greater or equal to 0");
         }

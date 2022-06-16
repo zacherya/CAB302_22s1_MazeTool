@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/MazeCreationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MazeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/Maze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/DataTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/DataTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,19 +34,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/Zac/Coding/CAB302_22s1_MazeTool",
-    "settings.editor.selected.configurable": "configurable.group.build"
-  }
-}]]></component>
   <component name="RunManager" selected="Application.Program">
     <configuration name="Modals.Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Modals.Maze" />
