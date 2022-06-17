@@ -134,6 +134,9 @@ public class MazeView extends DefaultView<MazeViewController> {
 
     public void viewingMazeSolutionToggle(Boolean solutionShow) {
         JLabel mazePic = new JLabel(new ImageIcon(viewingMaze.getMazeAsBytes(solutionShow)));
+        panels.get("primary").removeAll();
+        panels.get("primary").revalidate();
+        panels.get("primary").repaint();
         panels.get("primary").add(mazePic);
         panels.get("primary").repaint();
         repaint();
