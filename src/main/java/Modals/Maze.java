@@ -9,6 +9,10 @@ import Views.StdDraw;
 import java.awt.image.BufferedImage;
 import java.util.Stack;
 import java.util.ArrayList;
+/**
+ * Some of the following code is inspired by Aaron Wang's Maze implementation:
+ * https://github.com/MrCocoNuat/maze-generator/blob/main/src/Maze.java
+*/
 
 /**
  * Handles the initialisation, drawing and other rendering methods for a maze.
