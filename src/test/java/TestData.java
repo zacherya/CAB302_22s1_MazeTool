@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test suite for generating and storing maze data
- * @author Zac Adams
+ * @author Zac Adams, Aaron Nolan
  */
 public class TestData {
     Maze maze;
@@ -38,8 +38,8 @@ public class TestData {
      * Expect Success
      */
     @Test
-    public void CreateRandomMaze() {
-        assertEquals(1,1);
+    public void CreateRandomMaze() throws MazeCreationException {
+        assertNotNull(maze = new Maze(10, 10, 10));
     }
 
     /**
