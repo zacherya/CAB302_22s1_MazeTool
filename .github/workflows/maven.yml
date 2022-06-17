@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  Build:
 
     runs-on: ubuntu-latest
 
@@ -20,7 +20,7 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    - name: Run Package (compile, test, generate JavaDoc..)
+    - name: Compile.. test.. package..)
       run: mvn -B package --file pom.xml
     - name: Retrieve JAR
       uses: actions/upload-artifact@v2
