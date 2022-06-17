@@ -154,7 +154,9 @@ public class MazeView extends DefaultView<MazeViewController> {
     private void saveBtnAction(ActionEvent actionEvent) {
         System.out.println("Save button clicked");
         if(_controller.saveMaze()){
+            this.setTitle("Viewing Maze");
             makeViewUneditable();
+
             JOptionPane.showMessageDialog(this, getMazeName() + " by " + getMazeAuthor() + " has been saved successfully!");
         }
     }
