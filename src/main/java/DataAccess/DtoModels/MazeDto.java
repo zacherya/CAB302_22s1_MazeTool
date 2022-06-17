@@ -34,6 +34,22 @@ public class MazeDto {
         mazeSolution = toByteArray(mazeObj.drawSolution(true));
     }
 
+    /**
+     * Constructor for the MazeDto.
+     */
+    public MazeDto() {
+    }
+
+    // convert byte[] to BufferedImage
+    private static BufferedImage toBufferedImage(byte[] bytes)
+            throws IOException {
+
+        InputStream is = new ByteArrayInputStream(bytes);
+        BufferedImage bi = ImageIO.read(is);
+        return bi;
+
+    }
+
     public String GetMazeName() {
         return name;
     }
@@ -65,20 +81,6 @@ public class MazeDto {
         ImageIO.write(bi, "png", baos);
         byte[] bytes = baos.toByteArray();
         return bytes;
-
-    /**
-     * Constructor for the MazeDto.
-     */
-    public MazeDto() {
     }
 
-    // convert byte[] to BufferedImage
-    private static BufferedImage toBufferedImage(byte[] bytes)
-            throws IOException {
-
-        InputStream is = new ByteArrayInputStream(bytes);
-        BufferedImage bi = ImageIO.read(is);
-        return bi;
-
-    }
 }

@@ -27,10 +27,10 @@ public class MazeDataProvider<MazeDto> extends BaseDataProvider<MazeDto> {
         return null;
     }
 
-    public void InsertMaze(DataAccess.DtoModels.MazeDto maze) throws SQLException {
+    public Boolean InsertMaze(DataAccess.DtoModels.MazeDto maze) throws SQLException {
         String mazeStream = Base64.getEncoder().encodeToString(maze.getMazeAsBytes(false));
         String solutionStream = Base64.getEncoder().encodeToString(maze.getMazeAsBytes(true));
-       Database.Execute(String.format("INSERT INTO maze (name,author,mazeBinaryStream,solutionBinaryStream) VALUES ('%s','%s','%s','%s');",maze.GetMazeName(),maze.GetMazeAuthor(),mazeStream,solutionStream));
+        return Database.Insert(String.format("INSERT INTO maze (name,author,mazeBinaryStream,solutionBinaryStream) VALUES ('%s','%s','%s','%s');",maze.GetMazeName(),maze.GetMazeAuthor(),mazeStream,solutionStream));
     }
 
     /**

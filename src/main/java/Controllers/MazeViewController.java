@@ -106,7 +106,6 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
             } else {
                 JOptionPane.showMessageDialog(_view, "There was an issue converting the maze! "+ex.getLocalizedMessage());
             }
-        } finally {
             return false;
         }
 

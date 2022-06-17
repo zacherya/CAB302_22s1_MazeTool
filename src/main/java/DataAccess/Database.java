@@ -58,4 +58,8 @@ public class Database {
     public static ResultSet Execute(String query) throws SQLException {
         return Instance().createStatement().executeQuery(query);
     }
+
+    public static Boolean Insert(String query) throws SQLException {
+        return Instance().prepareStatement(query).execute();
+    }
 }
