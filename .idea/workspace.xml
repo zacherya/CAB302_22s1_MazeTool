@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3ba5c3d-0659-4866-9dd5-5216cde82f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAB302_22s1_MazeTool_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CAB302_22s1_MazeTool_Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mazeco-master.db" beforeDir="false" afterPath="$PROJECT_DIR$/mazeco-master.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MazeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MazeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataAccess/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataAccess/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataAccess/DtoModels/MazeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataAccess/DtoModels/MazeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataAccess/Providers/MazeDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataAccess/Providers/MazeDataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/MazeViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/MazeViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataAccess/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataAccess/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataAccess/DbConnectionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataAccess/DbConnectionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataAccess/DtoModels/MazeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataAccess/DtoModels/MazeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataAccess/Providers/MazeDataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataAccess/Providers/MazeDataProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Exceptions/MazeCreationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Exceptions/MazeCreationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Helpers/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helpers/Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Helpers/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helpers/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Modals/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modals/Maze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/MazeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/MazeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/MazeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/MazeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

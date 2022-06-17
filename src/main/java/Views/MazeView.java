@@ -101,7 +101,13 @@ public class MazeView extends DefaultView<MazeViewController> {
     }
 
     private void makeViewUneditable() {
-
+        buttons.get("saveBtn").setEnabled(false);
+        buttons.get("logoImageBtn").setEnabled(false);
+        buttons.get("entryImageBtn").setEnabled(false);
+        buttons.get("exitImageBtn").setEnabled(false);
+        textAreas.get("authorText").setEnabled(false);
+        textAreas.get("titleText").setEnabled(false);
+        repaint();
     }
 
     public String getMazeName() {
