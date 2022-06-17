@@ -6,11 +6,9 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  test:
+  Build:
 
     runs-on: ubuntu-latest
 
@@ -22,5 +20,13 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    - name: Running tests
-      run: mvn -B test --file pom.xml
+    - name: Run Maven package
+      run: mvn -B package --file pom.xml
+    - name: Retrieve JAR
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/CAB302_22s1_MazeTool_Project-1.0-SNAPSHOT.jar
+    - name: Retrieve JavaDoc
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/apidocs

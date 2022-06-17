@@ -66,6 +66,10 @@ public class MazeDto {
         byte[] bytes = baos.toByteArray();
         return bytes;
 
+    /**
+     * Constructor for the MazeDto.
+     */
+    public MazeDto() {
     }
 
     // convert byte[] to BufferedImage
