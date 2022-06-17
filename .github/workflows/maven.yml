@@ -28,7 +28,11 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: target/CAB302_22s1_MazeTool_Project-1.0-SNAPSHOT.jar
-    - name: Archive JavaDoc file
+    - name: Archive JavaDoc (HTML)
       uses: actions/upload-artifact@v2
       with:
         path: target/apidocs/index.html
+    - name: Archive JavaDoc (CSS)
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/apidocs/*.css
