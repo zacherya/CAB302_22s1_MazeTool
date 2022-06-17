@@ -55,8 +55,7 @@ public class OpenView extends DefaultView<OpenViewController> {
         if(mazes.size() == 0) {
             panels.get("middlePanel").add(new JLabel("There are no mazes in the database"));
         } else {
-            tableModel = new DefaultTableModel(columnNames, mazes.size());
-            tableModel.removeRow(0);
+            tableModel = new DefaultTableModel(columnNames, 0);
             for (MazeDto maze: mazes) {
                 tableModel.addRow(new Object[] {maze.GetMazeName(), maze.GetMazeAuthor()});
             }
