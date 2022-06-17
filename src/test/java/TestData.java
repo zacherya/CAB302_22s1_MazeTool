@@ -39,7 +39,7 @@ public class TestData {
      */
     @Test
     public void CreateRandomMaze() {
-        assertEquals(1,1);
+        assertEquals(1,2);
     }
 
     /**
