@@ -39,13 +39,16 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
             _view = new MazeView(this);
             // Configure maze to be random here
             try {
-                _modal = new Maze(20,20,0);
+                _modal = new Maze(20, 20, 0);
                 _view.insertMazeFrame(_modal.draw());
             } catch (MazeCreationException e) {
                 JOptionPane.showMessageDialog(_view, "There was an issue generating the maze!");
                 disposeView();
                 new WelcomeViewController();
             }
+        } else if (!generateRandom && maze == null) {
+            JOptionPane.showMessageDialog(_view, "Drawing mazes aren't unavailable at this time!");
+            new WelcomeViewController();
         } else {
             _view = new MazeView(this, maze);
             _modal = new Maze();
