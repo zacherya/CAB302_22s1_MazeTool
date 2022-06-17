@@ -1,9 +1,14 @@
 package Controllers;
 
+import DataAccess.DtoModels.MazeDto;
 import DataAccess.Providers.MazeDataProvider;
 import Modals.Open;
 import Views.IView;
 import Views.OpenView;
+
+import javax.swing.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Initiates and controls associated functionality for retrieving, displaying and interacting with existing maze files.
@@ -20,6 +25,16 @@ public class OpenViewController extends DefaultController<Open, OpenView> {
         _provider = new MazeDataProvider();
         _view = new OpenView(this);
         _modal = new Open();
+    }
+
+    public ArrayList<MazeDto> getMazes() {
+        ArrayList<MazeDto> mazes = new ArrayList<>();
+        try {
+            mazes = _provider.GetMazes();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(_view, "There was an issue fetching the mazes! "+ex.getLocalizedMessage());
+        }
+        return mazes;
     }
 
     /**

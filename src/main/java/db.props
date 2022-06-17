@@ -1,4 +1,0 @@
-jdbc.url=jdbc:sqlite:mazeco-master.db
-jdbc.username=
-jdbc.password=
-jdbc.schema=

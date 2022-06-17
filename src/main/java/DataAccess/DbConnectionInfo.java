@@ -2,6 +2,7 @@ package DataAccess;
 
 import Exceptions.ConnectionInfoException;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,10 +29,11 @@ public class DbConnectionInfo {
         Properties props = new Properties();
         FileInputStream in = null;
         try {
-            in = new FileInputStream("./db.props");
+            in = new FileInputStream(file);
+
             props.load(in);
             in.close();
-
+            System.out.println(file);
             setProps(props);
 
         } catch (FileNotFoundException fnfe) {

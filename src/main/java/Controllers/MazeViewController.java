@@ -1,11 +1,17 @@
 package Controllers;
 
+import DataAccess.DtoModels.MazeDto;
 import DataAccess.Providers.MazeDataProvider;
 import Exceptions.MazeCreationException;
 import Views.MazeView;
 import Modals.Maze;
 
 import javax.swing.*;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.ArrayList;
+import java.util.Base64;
 
 /**
  * Initiates and controls associated functionality for a maze, manipulating the view as required.
@@ -74,6 +80,37 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
         showSolution = !showSolution;
         _modal.toggleSolution(showSolution);
         updateView();
+        try {
+            MazeDataProvider mdp = new MazeDataProvider();
+            ArrayList<MazeDto> mazes = mdp.GetMazes();
+            for (MazeDto maze:mazes) {
+                System.out.println(maze.GetMazeName());
+            }
+        } catch(SQLException sqle) {
+            JOptionPane.showMessageDialog(_view, "There was an issue fetching the maze! "+sqle.getLocalizedMessage());
+        }
+
+    }
+
+    public Boolean saveMaze() {
+        //MazeDto(String name, String author, byte[] main, byte[] solution)
+        try {
+            byte[] main = MazeDto.toByteArray(_modal.draw());
+            byte[] solution = MazeDto.toByteArray(_modal.drawSolution(true));
+            MazeDto mazeToSave = new MazeDto(_view.getMazeName(),_view.getMazeAuthor(),main,solution);
+            _provider.InsertMaze(mazeToSave);
+            return true;
+        } catch (Exception ex) {
+            if(ex.getLocalizedMessage().contains("SQLITE_CONSTRAINT_UNIQUE")) {
+                JOptionPane.showMessageDialog(_view, "You can't create a maze with the same name as one that already exists!");
+            } else {
+                JOptionPane.showMessageDialog(_view, "There was an issue converting the maze! "+ex.getLocalizedMessage());
+            }
+        } finally {
+            return false;
+        }
+
+
     }
 
 }

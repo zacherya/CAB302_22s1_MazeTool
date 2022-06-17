@@ -2,6 +2,8 @@ package DataAccess.Providers;
 
 import DataAccess.*;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public interface IDataProvider<T> {
 
@@ -16,15 +18,15 @@ public interface IDataProvider<T> {
      * @return An iterable list of entities
      * @author Zac Adams
      */
-    Iterable<T> GetEntities();
+    ResultSet GetEntities(String tableName) throws SQLException;
 
     /**
      * Get all entities from the database.
-     * @param key the search value to perform the lookup
+     * @param id the search value to perform the lookup
      * @return An iterable list of entities
      * @author Zac Adams
      */
-    T GetEntity(String key);
+    T GetEntity(String id);
 
     /**
      * Add an entity to the database.
@@ -32,7 +34,7 @@ public interface IDataProvider<T> {
      * @return A true/false success flag to determine if the operation was successful
      * @author Zac Adams
      */
-    boolean AddEntity(T object);
+    boolean AddEntity(T object) throws SQLException;
 
     /**
      * Remove an entity from the database.

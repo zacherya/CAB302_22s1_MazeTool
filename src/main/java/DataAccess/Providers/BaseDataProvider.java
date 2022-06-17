@@ -1,5 +1,10 @@
 package DataAccess.Providers;
 
+import DataAccess.Database;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Base data provider abstract class.
  * @param <T> the typecast of data to retrieve and insert
@@ -12,17 +17,19 @@ public abstract class BaseDataProvider<T> implements IDataProvider<T> {
      * @return An iterable list of entities
      * @author Zac Adams
      */
-    public Iterable<T> GetEntities() {
-        return null;
+    public ResultSet GetEntities(String tableName) throws SQLException {
+        tableName = tableName.replaceAll("Dto", "").toLowerCase();
+        ResultSet rs = Database.Execute("Select * From "+tableName+";");
+        return rs;
     }
 
     /**
      * Get all entities from the database.
-     * @param key the search value to perform the lookup
+     * @param id the search value to perform the lookup
      * @return An iterable list of entities
      * @author Zac Adams
      */
-    public T GetEntity(String key) {
+    public T GetEntity(String id) {
         return null;
     }
 
@@ -32,7 +39,9 @@ public abstract class BaseDataProvider<T> implements IDataProvider<T> {
      * @return A true/false success flag to determine if the operation was successful
      * @author Zac Adams
      */
-    public boolean AddEntity(T object) {
+    public boolean AddEntity(T object) throws SQLException {
+        String tableName = object.getClass().getSimpleName().replaceAll("Dto", "").toLowerCase();
+        ResultSet rs = Database.Execute("INSERT INTO "+tableName+" (name,author,mazeBinaryStream,solutionBinaryStream) VALUES ();");
         return false;
     }
 

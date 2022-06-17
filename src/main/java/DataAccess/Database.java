@@ -4,7 +4,9 @@ import Exceptions.ConnectionInfoException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 /**
  * Used to initialise and manage the database connection.
@@ -31,8 +33,7 @@ public class Database {
     private void Initialise() {
         try {
             // Get connection info object
-            DbInfo = new DbConnectionInfo("./db.props");
-
+            DbInfo = new DbConnectionInfo("db.props");
             // get a connection
             INSTANCE = DriverManager.getConnection(DbInfo.Url(),DbInfo.Username(), DbInfo.Password());
         } catch (SQLException sqle) {
@@ -52,5 +53,9 @@ public class Database {
             new Database();
         }
         return INSTANCE;
+    }
+
+    public static ResultSet Execute(String query) throws SQLException {
+        return Instance().createStatement().executeQuery(query);
     }
 }

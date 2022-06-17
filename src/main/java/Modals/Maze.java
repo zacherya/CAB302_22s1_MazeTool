@@ -19,6 +19,8 @@ public class Maze {
     private Room[][] rooms;
     private Door[][] vDoors, hDoors;
 
+    private double openDoorChance;
+
     public Maze() {}
 
     /**
@@ -56,6 +58,8 @@ public class Maze {
         }
         this.height = h;
         this.length = l;
+
+        this.openDoorChance = openDoorChance;
 
         this.rooms = new Room[h][l];
         this.vDoors = new Door[h][l-1];
@@ -117,7 +121,7 @@ public class Maze {
                     this.hDoors[currentRoom[0]][currentRoom[1]].open(); //advancing down
                     //System.out.println("down");
                 }
-            } else{
+            } else {
                 if (nextRoom[1] < currentRoom[1]){
                     this.vDoors[nextRoom[0]][nextRoom[1]].open(); //advancing left
                     //System.out.println("left");
@@ -227,6 +231,79 @@ public class Maze {
         return StdDraw.extractGraphic();
     }
 
+    public BufferedImage drawSolution(Boolean display){ //Dijkstra
+        this.rooms[0][0].setDistance(0);//distance from source to source is always 0
+        this.rooms[0][0].visit();
+
+        ArrayList<int[]> loRooms = new ArrayList<int[]>();
+        int hiDistance = 1;
+        ArrayList<int[]> hiRooms = new ArrayList<int[]>();
+
+        int[] zz = {0,0};
+        loRooms.add(zz);
+
+        while (loRooms.size() > 0 && this.rooms[this.height-1][this.length-1].getDistance() == -1){
+            for(int[] coords : loRooms){
+                int[][] adjacents = unvisitedAdjacents(coords[0], coords[1]);
+                for(int[] newCoords : adjacents){
+                    this.rooms[newCoords[0]][newCoords[1]].visit();
+                    this.rooms[newCoords[0]][newCoords[1]].setDistance(hiDistance);
+                    hiRooms.add(newCoords);
+                }
+            }
+            hiDistance++;
+
+            loRooms = hiRooms;
+            hiRooms = new ArrayList<int[]>();
+        }
+
+        // Only colours the path to the end
+        if (display) {
+            StdDraw.setPenColor(StdDraw.RED);
+            StdDraw.setPenRadius(0.0012);
+        } else {
+            StdDraw.setPenColor(StdDraw.WHITE);
+            StdDraw.setPenRadius(0.0025);
+        }
+
+        int[] currentRoom = {this.height - 1, this.length - 1};
+        for(int d = this.rooms[this.height - 1][this.length - 1].getDistance() - 1; d > 0; d--){
+
+            if (currentRoom[0] > 0 && this.rooms[currentRoom[0] - 1][currentRoom[1]].getDistance() == d && this.hDoors[currentRoom[0]-1][currentRoom[1]].isOpen()){
+                currentRoom[0]--;
+                //StdDraw.filledSquare (currentRoom[1] * 2, - (currentRoom[0] * 2), 0.1);
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2 + 0.3,  - (currentRoom[0] * 2 - 0.3));
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2,  - (currentRoom[0] * 2 + 0.3));
+                StdDraw.line(currentRoom[1] * 2 + 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2,  - (currentRoom[0] * 2 + 0.3));
+                continue;
+            }
+            if (currentRoom[1] > 0 && this.rooms[currentRoom[0]][currentRoom[1] - 1].getDistance() == d && this.vDoors[currentRoom[0]][currentRoom[1]-1].isOpen()){
+                currentRoom[1]--;
+                //StdDraw.filledSquare (currentRoom[1] * 2, - (currentRoom[0] * 2), 0.2);
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2 - 0.3,  - (currentRoom[0] * 2 + 0.3));
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2 + 0.3,  - (currentRoom[0] * 2));
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 + 0.3), currentRoom[1] * 2 + 0.3,  - (currentRoom[0] * 2));
+                continue;
+            }
+            if (currentRoom[0] < this.height - 1 && this.rooms[currentRoom[0] + 1][currentRoom[1]].getDistance() == d && this.hDoors[currentRoom[0]][currentRoom[1]].isOpen()){
+                currentRoom[0]++;
+                //StdDraw.filledSquare (currentRoom[1] * 2, - (currentRoom[0] * 2), 0.3);
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 + 0.3), currentRoom[1] * 2 + 0.3,  - (currentRoom[0] * 2 + 0.3));
+                StdDraw.line(currentRoom[1] * 2 - 0.3, - (currentRoom[0] * 2 + 0.3), currentRoom[1] * 2,  - (currentRoom[0] * 2 - 0.3));
+                StdDraw.line(currentRoom[1] * 2 + 0.3, - (currentRoom[0] * 2 + 0.3), currentRoom[1] * 2,  - (currentRoom[0] * 2 - 0.3));
+                continue;
+            }
+            if (currentRoom[1] < this.length - 1 && this.rooms[currentRoom[0]][currentRoom[1] + 1].getDistance() == d && this.vDoors[currentRoom[0]][currentRoom[1]].isOpen()){
+                currentRoom[1]++;
+                //StdDraw.filledSquare (currentRoom[1] * 2, - (currentRoom[0] * 2), 0.4);
+                StdDraw.line(currentRoom[1] * 2 + 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2 + 0.3,  - (currentRoom[0] * 2 + 0.3));
+                StdDraw.line(currentRoom[1] * 2 + 0.3, - (currentRoom[0] * 2 - 0.3), currentRoom[1] * 2 - 0.3,  - (currentRoom[0] * 2));
+                StdDraw.line(currentRoom[1] * 2 + 0.3, - (currentRoom[0] * 2 + 0.3), currentRoom[1] * 2 - 0.3,  - (currentRoom[0] * 2));
+                continue;
+            }
+        }
+        return StdDraw.extractGraphic();
+    }
     public void toggleSolution(Boolean display){ //Dijkstra
         this.rooms[0][0].setDistance(0);//distance from source to source is always 0
         this.rooms[0][0].visit();

@@ -63,6 +63,8 @@ public class MazeView extends DefaultView<MazeViewController> {
         // Create and configure components for top panel
         textAreas.put("titleText",new JTextArea(1,57));
         textAreas.get("titleText").setText("Give your new maze a creative title..");
+        textAreas.put("authorText",new JTextArea(1,12));
+        textAreas.get("authorText").setText("Who made this maze?");
         buttons.put("backBtn",createButton("←", 55, 30, this::backBtnAction));
 
         // Create components for bottom panel
@@ -83,7 +85,9 @@ public class MazeView extends DefaultView<MazeViewController> {
 
         // Add elements to panels
         addButtonsToPanel(panels.get("topPanel"),"backBtn");
+        addTextAreasToPanel(panels.get("topPanel"),"authorText");
         addTextAreasToPanel(panels.get("topPanel"),"titleText");
+
         addButtonsToPanel(panels.get("rightPanel"),"solutionBtn","logoImageBtn","entryImageBtn","exitImageBtn");
         addButtonsToPanel(panels.get("bottomPanel"),"saveBtn","exportBtn");
 
@@ -94,6 +98,17 @@ public class MazeView extends DefaultView<MazeViewController> {
         getContentPane().add(panels.get("leftPanel"), BorderLayout.LINE_START);
         getContentPane().add(panels.get("centrePanel"), BorderLayout.CENTER);
         getContentPane().add(panels.get("primary"));
+    }
+
+    private void makeViewUneditable() {
+
+    }
+
+    public String getMazeName() {
+        return textAreas.get("titleText").getText();
+    }
+    public String getMazeAuthor() {
+        return textAreas.get("authorText").getText();
     }
 
     public void insertMazeFrame(BufferedImage graphic) {
@@ -130,7 +145,13 @@ public class MazeView extends DefaultView<MazeViewController> {
     /** Event for a save button
      * @param actionEvent An ActionEvent
      * @author Aaron Nolan */
-    private void saveBtnAction(ActionEvent actionEvent) { System.out.println("Save button clicked"); }
+    private void saveBtnAction(ActionEvent actionEvent) {
+        System.out.println("Save button clicked");
+        if(_controller.saveMaze()){
+            makeViewUneditable();
+            JOptionPane.showMessageDialog(this, getMazeName() + " by " + getMazeAuthor() + " has been saved successfully!");
+        }
+    }
 
     /** Event for an export button
      * @param actionEvent An ActionEvent
