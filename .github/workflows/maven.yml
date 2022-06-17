@@ -24,7 +24,7 @@ jobs:
       run: mvn -B test --file pom.xml
     - name: Package with Maven
       run: mvn -B package --file pom.xml
-    - name: Archive JAR fil
+    - name: Archive JAR file
       uses: actions/upload-artifact@v2
       with:
         path: target/*.jar
