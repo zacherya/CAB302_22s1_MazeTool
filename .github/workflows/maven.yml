@@ -20,5 +20,11 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    - name: Running tests
+    - name: Test with Maven
       run: mvn -B test --file pom.xml
+    - name: Package with Maven
+      run: mvn -B package --file pom.xml
+    - name: Archive JAR fil
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/*.jar
