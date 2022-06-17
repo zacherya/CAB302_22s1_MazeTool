@@ -59,8 +59,10 @@ public class MazeView extends DefaultView<MazeViewController> {
         // Set Controller
         _controller = controller;
         readyFrame(this::addElements);
-        textAreas.get("authorText").setText(viewingMaze.GetMazeName());
-        textAreas.get("titleText").setText(viewingMaze.GetMazeAuthor());
+
+        textAreas.get("authorText").setText(viewingMaze.GetMazeAuthor());
+        textAreas.get("titleText").setText(viewingMaze.GetMazeName());
+
         viewingMazeSolutionToggle(false);
         makeViewUneditable();
     }
@@ -107,8 +109,7 @@ public class MazeView extends DefaultView<MazeViewController> {
 
         // Add elements to panels
         addButtonsToPanel(panels.get("topPanel"),"backBtn");
-        addTextAreasToPanel(panels.get("topPanel"),"authorText");
-        addTextAreasToPanel(panels.get("topPanel"),"titleText");
+        addTextAreasToPanel(panels.get("topPanel"),"authorText","titleText");
 
         addButtonsToPanel(panels.get("rightPanel"),"solutionBtn","logoImageBtn","entryImageBtn","exitImageBtn");
         addButtonsToPanel(panels.get("bottomPanel"),"saveBtn","exportBtn");
@@ -129,6 +130,7 @@ public class MazeView extends DefaultView<MazeViewController> {
         buttons.get("exitImageBtn").setEnabled(false);
         textAreas.get("authorText").setEnabled(false);
         textAreas.get("titleText").setEnabled(false);
+        panels.get("topPanel").repaint();
         repaint();
     }
 
@@ -136,9 +138,7 @@ public class MazeView extends DefaultView<MazeViewController> {
         JLabel mazePic = new JLabel(new ImageIcon(viewingMaze.getMazeAsBytes(solutionShow)));
         panels.get("primary").removeAll();
         panels.get("primary").revalidate();
-        panels.get("primary").repaint();
         panels.get("primary").add(mazePic);
-        panels.get("primary").repaint();
         repaint();
     }
 
