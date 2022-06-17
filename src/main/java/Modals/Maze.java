@@ -30,7 +30,7 @@ public class Maze {
     }
 
     /**
-     * Generates a new maze based on the provided specifications.
+     * Constructs a new maze if valid parameters are passed.
      * @param h height of the maze
      * @param l length of the maze
      * @param openDoorChance open door chance of the maze
@@ -44,6 +44,13 @@ public class Maze {
         }
     }
 
+    /**
+     * Creates a new maze with specific measurements.
+     * @param h height of the maze
+     * @param l length of the maze
+     * @param openDoorChance open door chance of the maze
+     * @throws IllegalArgumentException
+     */
     public void newMaze(int h, int l, double openDoorChance) throws IllegalArgumentException {
         if(h < 5 || l < 5) {
             throw new IllegalArgumentException("The maze must be at least 5x5");
@@ -92,6 +99,9 @@ public class Maze {
         }
     }
 
+    /**
+     * Generates a maze.
+     */
     public void generate(){
         Stack<int[]> chain = new Stack<int[]>();
         int[] start = {0,0};
@@ -135,6 +145,12 @@ public class Maze {
 
     }
 
+    /**
+     * Finds neighbours that haven't yet been generated for a given value.
+     * @param y room
+     * @param x next room
+     * @return the ungenerated neighbours
+     */
     public int[][] ungeneratedNeighbours(int y, int x){
         int[][] neighbours = new int[4][2];
         int count = 0;
@@ -166,6 +182,10 @@ public class Maze {
         return cutNeighbours;
     }
 
+    /**
+     * Draws the generated maze.
+     * @return the maze as a buffered image
+     */
     public BufferedImage draw(){
         //Change the double value to your preferred maximum dimension in pixels
         double scaler = 155.0 / Math.max(this.length * 2 + 1, this.height * 2 + 1);
@@ -227,6 +247,11 @@ public class Maze {
         return StdDraw.extractGraphic();
     }
 
+    /**
+     * Draws the solution to a generated maze if not already showing.
+     * Hides the solution to a generated maze if already showing.
+     * @param display true to display the solution, false to hide the solution
+     */
     public void toggleSolution(Boolean display){ //Dijkstra
         this.rooms[0][0].setDistance(0);//distance from source to source is always 0
         this.rooms[0][0].visit();
@@ -301,7 +326,13 @@ public class Maze {
         StdDraw.show();
     }
 
-    public int[][] unvisitedAdjacents(int y, int x){ //yeah i know code recycling and all that
+    /**
+     * Finds adjacent coordinates that have yet been visited.
+     * @param y coordinate y
+     * @param x coordinate x
+     * @return the unvisited adjacent values
+     */
+    public int[][] unvisitedAdjacents(int y, int x){
         int[][] neighbours = new int[4][2];
         int count = 0;
         if (y > 0 && !this.rooms[y-1][x].visited() && this.hDoors[y-1][x].isOpen()){

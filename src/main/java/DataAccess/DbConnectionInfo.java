@@ -10,6 +10,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Class responsible for configuring and handling database credentials.
+ * @author Zac Adams
+ */
 public class DbConnectionInfo {
     private String url;
     private String username;

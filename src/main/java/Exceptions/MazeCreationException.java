@@ -1,5 +1,9 @@
 package Exceptions;
 
+/**
+ * Maze creation exception for raising issues related to initialising a maze, extends the Exception class.
+ * @author Zac Adams
+ */
 public class MazeCreationException extends Exception {
     /**
      * A custom method for defining issues that occurred while creating a particular
