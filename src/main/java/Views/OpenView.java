@@ -1,5 +1,6 @@
 package Views;
 
+import Controllers.MazeViewController;
 import Controllers.OpenViewController;
 import Controllers.WelcomeViewController;
 import DataAccess.DtoModels.MazeDto;
@@ -106,6 +107,7 @@ public class OpenView extends DefaultView<OpenViewController> {
 
     private void openMaze(int row) {
         System.out.println(mazes.get(row).GetMazeName() + " clicked");
-
+        _controller.disposeView();
+        new MazeViewController(false,mazes.get(row));
     }
 }

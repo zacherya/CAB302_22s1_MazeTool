@@ -7,11 +7,6 @@ import Views.MazeView;
 import Modals.Maze;
 
 import javax.swing.*;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.ArrayList;
-import java.util.Base64;
 
 /**
  * Initiates and controls associated functionality for a maze, manipulating the view as required.
@@ -37,10 +32,11 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
      *                       generated data
      * @author Aaron Nolan, Zac Adams
      */
-    public MazeViewController(boolean generateRandom) {
+    public MazeViewController(boolean generateRandom, MazeDto maze) {
         _provider = new MazeDataProvider();
-        _view = new MazeView(this);
+
         if(generateRandom) {
+            _view = new MazeView(this);
             // Configure maze to be random here
             try {
                 _modal = new Maze(20,20,0);
@@ -51,6 +47,7 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
                 new WelcomeViewController();
             }
         } else {
+            _view = new MazeView(this, maze);
             _modal = new Maze();
         }
     }
@@ -78,17 +75,12 @@ public class MazeViewController extends DefaultController<Modals.Maze, MazeView>
      */
     public void toggleMazeSolution() {
         showSolution = !showSolution;
-        _modal.toggleSolution(showSolution);
-        updateView();
-        try {
-            MazeDataProvider mdp = new MazeDataProvider();
-            ArrayList<MazeDto> mazes = mdp.GetMazes();
-            for (MazeDto maze:mazes) {
-                System.out.println(maze.GetMazeName());
-            }
-        } catch(SQLException sqle) {
-            JOptionPane.showMessageDialog(_view, "There was an issue fetching the maze! "+sqle.getLocalizedMessage());
+        if(_view.viewingMaze == null) {
+            _modal.toggleSolution(showSolution);
+        } else {
+            _view.viewingMazeSolutionToggle(showSolution);
         }
+        updateView();
 
     }
 

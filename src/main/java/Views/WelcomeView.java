@@ -76,7 +76,7 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     private void newBtnAction(ActionEvent actionEvent) {
         System.out.println("New button clicked");
         controller.disposeView();
-        MazeViewController newView = new MazeViewController(false);
+        MazeViewController newView = new MazeViewController(false,null);
     }
 
     /** Event for a random button
@@ -85,7 +85,7 @@ public class WelcomeView extends DefaultView<WelcomeViewController>  {
     private void randomBtnAction(ActionEvent actionEvent) {
         System.out.println("Random button clicked");
         controller.disposeView();
-        MazeViewController newView = new MazeViewController(true);
+        MazeViewController newView = new MazeViewController(true,null);
     }
 
     /** Event for an open button

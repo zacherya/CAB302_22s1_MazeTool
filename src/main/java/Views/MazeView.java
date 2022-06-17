@@ -2,6 +2,7 @@ package Views;
 
 import Controllers.MazeViewController;
 import Controllers.WelcomeViewController;
+import DataAccess.DtoModels.MazeDto;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -15,6 +16,7 @@ import static java.lang.String.format;
 /** The MazeView Class */
 public class MazeView extends DefaultView<MazeViewController> {
 
+    public final MazeDto viewingMaze;
     private static final int BOTTOM_BTN_WIDTH = 0;
     private static final int BOTTOM_BTN_HEIGHT = 40;
     private static final int RIGHT_BTN_WIDTH = 175;
@@ -29,18 +31,38 @@ public class MazeView extends DefaultView<MazeViewController> {
     private JFileChooser entryImageSelector = new JFileChooser(USER_DIRECTORY + PATH);
     private JFileChooser exitImageSelector = new JFileChooser(USER_DIRECTORY + PATH);
 
-    /** Constructs and configures the view for Maze
-     * @param controller The views controller access parameter
+    /**
+     * Constructs and configures the view for Maze
+     *
+     * @param controller  The views controller access parameter
      * @author Aaron Nolan, Zac Adams
      */
     public MazeView(MazeViewController controller) {
         // JFrame setup
         super("New Maze", 750,450);
+        this.viewingMaze = null;
         configureFrame();
 
         // Set Controller
         _controller = controller;
         readyFrame(this::addElements);
+    }
+
+    public MazeView(MazeViewController controller, MazeDto mazeToShow) {
+
+        // JFrame setup
+        super("Viewing Maze", 750,450);
+        configureFrame();
+
+        viewingMaze = mazeToShow;
+
+        // Set Controller
+        _controller = controller;
+        readyFrame(this::addElements);
+        textAreas.get("authorText").setText(viewingMaze.GetMazeName());
+        textAreas.get("titleText").setText(viewingMaze.GetMazeAuthor());
+        viewingMazeSolutionToggle(false);
+        makeViewUneditable();
     }
 
     /**
@@ -107,6 +129,13 @@ public class MazeView extends DefaultView<MazeViewController> {
         buttons.get("exitImageBtn").setEnabled(false);
         textAreas.get("authorText").setEnabled(false);
         textAreas.get("titleText").setEnabled(false);
+        repaint();
+    }
+
+    public void viewingMazeSolutionToggle(Boolean solutionShow) {
+        JLabel mazePic = new JLabel(new ImageIcon(viewingMaze.getMazeAsBytes(solutionShow)));
+        panels.get("primary").add(mazePic);
+        panels.get("primary").repaint();
         repaint();
     }
 
