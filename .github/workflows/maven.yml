@@ -20,7 +20,7 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    - name: Compile.. test.. package..)
+    - name: Run Maven package
       run: mvn -B package --file pom.xml
     - name: Retrieve JAR
       uses: actions/upload-artifact@v2
