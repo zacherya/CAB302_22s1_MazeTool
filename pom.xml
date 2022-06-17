@@ -31,7 +31,7 @@
                 <version>2.22.1</version>
             </plugin>
 
-            <!-- JAR -->
+            <!-- JAR file -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
